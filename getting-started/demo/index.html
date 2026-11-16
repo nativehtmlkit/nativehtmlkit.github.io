@@ -11806,7 +11806,7 @@
 every example from these docs. Each example shows its Python, PowerShell, HTML and CSS source, and
 starts with one click as its own native window.</p>
 <p><img alt="The NativeHTMLKit Demo on KDE Plasma Wayland, with the Counter example started from it" src="../../assets/demo-counter-linux.png" /></p>
-<p><em>Real capture: NativeHTMLKit Demo 0.1.0 installed from PyPI, KDE Plasma 6.6 Wayland. The Counter
+<p><em>Real capture: NativeHTMLKit Demo 0.1.1, KDE Plasma 6.6 Wayland. The Counter
 example was started with <strong>Run Python</strong> and clicked three times.</em></p>
 <h2 id="install-and-start">Install and start<a class="headerlink" href="#install-and-start" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">PowerShell</label></div>
@@ -11836,11 +11836,17 @@ languages, install both packages. The demo finds Python and PowerShell on your <
 is missing, the button for that language says what to install.</p>
 <h2 id="using-the-window">Using the window<a class="headerlink" href="#using-the-window" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Pick an example</strong> on the left. The <em>SDK examples</em> use your own HTML and CSS with events and
-   page updates. The <em>NativeHTMLKit UI examples</em> use the reactive component library. Type in
-   <strong>Filter examples</strong> to search titles, summaries and topics.</li>
-<li><strong>Read the source</strong> in the tabs:<ul>
-<li><strong>Python</strong> and <strong>PowerShell</strong>: the example files exactly as they ship.</li>
+<li><strong>Pick an example</strong> on the left; each shows a one-line summary. The <em>SDK examples</em> use your own
+   HTML and CSS with events and page updates. The <em>NativeHTMLKit UI examples</em> use the reactive
+   component library.<ul>
+<li><strong>All / SDK / UI</strong> narrows the list to one kind and shows how many examples match.</li>
+<li><strong>Filter examples</strong> searches titles, summaries and topics; the <strong>×</strong> button or <strong>Esc</strong> clears it.</li>
+<li><strong>Up</strong> and <strong>Down</strong> move through the list, also while you type in the filter box.</li>
+</ul>
+</li>
+<li><strong>Read the source</strong> in the tabs (the source panel is always dark):<ul>
+<li><strong>Python</strong> and <strong>PowerShell</strong>: the code only. The page HTML and the stylesheet are replaced by a
+  one-line pointer to their tabs. <strong>Full script</strong> shows the single file exactly as it ships.</li>
 <li><strong>HTML</strong> and <strong>CSS</strong>: the page. For SDK examples this is the page embedded in the code or loaded
   from <code>index.html</code>. For UI examples it is the HTML the library generates for the first render.</li>
 </ul>
