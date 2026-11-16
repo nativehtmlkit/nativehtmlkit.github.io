@@ -1,0 +1,28 @@
+/* Hover menus under the top tabs (see javascripts/nav-dropdown.js). */
+.md-tabs, .md-tabs .md-grid, .md-tabs__list { overflow: visible !important; contain: none !important; }
+/* the theme fades the tab list with a CSS mask, which would also clip the menus */
+.md-tabs__list { -webkit-mask-image: none !important; mask-image: none !important; }
+.md-tabs__item { position: relative; }
+.nhk-dd {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -0.6rem;
+  z-index: 10;
+  gap: 1.6rem;
+  padding: 0.8rem 1rem;
+  min-width: 12rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+  box-shadow: var(--md-shadow-z2);
+  white-space: nowrap;
+}
+.md-tabs__item:hover > .nhk-dd,
+.md-tabs__item:focus-within > .nhk-dd { display: flex; }
+.nhk-dd__col { display: flex; flex-direction: column; gap: 0.15rem; }
+.nhk-dd__head { font-weight: 600; margin-bottom: 0.25rem; color: var(--nhk-h2, #7fd3c7) !important; }
+.nhk-dd__link, .nhk-dd__head { font-size: 0.68rem; opacity: 1 !important; color: var(--md-default-fg-color--light); }
+.nhk-dd a:hover { color: var(--md-accent-fg-color) !important; }
+/* the last tabs open to the left so the menu stays on screen */
+.md-tabs__item:nth-last-child(-n+2) > .nhk-dd { left: auto; right: -0.6rem; }
