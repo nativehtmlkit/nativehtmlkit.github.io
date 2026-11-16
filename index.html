@@ -15,7 +15,7 @@
       
       
       
-        <link rel="next" href="./getting-started/">
+        <link rel="next" href="./getting-started/demo/">
       
       
         
@@ -191,6 +191,8 @@
       
         
           
+        
+      
         
       
         
@@ -481,6 +483,8 @@
       
         
       
+        
+      
     
     
     
@@ -535,6 +539,33 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix>
               
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./getting-started/demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Try the demo
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
                 
               
                 
@@ -11634,6 +11665,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#try-it-in-one-minute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Try it in one minute
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#a-complete-app-in-a-few-lines" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -11720,12 +11762,31 @@ get the answer on stdout. Every command and option with examples.</p>
 </ul>
 </div>
 <p>The UI library and the SDK work the same on Linux and Windows (the few differences are on <a href="getting-started/platforms/">Linux and Windows</a>); each has a Python and a PowerShell section with the same shape: <strong>getting started</strong>, step-by-step <strong>tutorials</strong>, task <strong>guides</strong>, complete <strong>examples</strong> with screenshots and source, and the full <strong>API reference</strong>. Python and PowerShell mirror each other one to one. The CLI has separate Linux and Windows sections because shell scripts differ per system.</p>
-<p><strong>Start here:</strong> <a href="getting-started/">Install and first steps</a> · <a href="getting-started/choose/">Choose an entry point</a> · <a href="getting-started/requirements/">Platform requirements</a> · <a href="getting-started/platforms/">Linux and Windows</a></p>
+<p><strong>Start here:</strong> <a href="getting-started/demo/">Try the demo</a> · <a href="getting-started/">Install and first steps</a> · <a href="getting-started/choose/">Choose an entry point</a> · <a href="getting-started/requirements/">Platform requirements</a> · <a href="getting-started/platforms/">Linux and Windows</a></p>
 <h2 id="what-it-looks-like">What it looks like<a class="headerlink" href="#what-it-looks-like" title="Permanent link">&para;</a></h2>
 <p><img alt="The Python UI component gallery running on KDE Plasma 6.6 Wayland" src="assets/python-ui-linux.png" /></p>
 <p><em>Real capture: the Python UI gallery on KDE Plasma 6.6 Wayland (Core 1.0.3, Python SDK 0.1.2, UI 0.1.1).</em></p>
+<h2 id="try-it-in-one-minute">Try it in one minute<a class="headerlink" href="#try-it-in-one-minute" title="Permanent link">&para;</a></h2>
+<p>Install the demo and click through every example: it shows each one's Python, PowerShell, HTML and
+CSS source, and <strong>Run Python</strong> / <strong>Run PowerShell</strong> start it as its own window.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">PowerShell</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nativehtmlkit-demo
+nativehtmlkit-demo
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">NativeHTMLKit</span><span class="p">.</span><span class="n">Demo</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<span class="nb">Start-NativeHTMLKitDemo</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><img alt="The NativeHTMLKit Demo with the Counter example started from it" src="assets/demo-counter-linux.png" /></p>
+<p>More on the window, and how to check an installation: <a href="getting-started/demo/">Try the demo</a>.</p>
 <h2 id="a-complete-app-in-a-few-lines">A complete app in a few lines<a class="headerlink" href="#a-complete-app-in-a-few-lines" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">UI · Python</label><label for="__tabbed_1_2">UI · PowerShell</label><label for="__tabbed_1_3">SDK · Python</label><label for="__tabbed_1_4">SDK · PowerShell</label><label for="__tabbed_1_5">CLI · Linux</label><label for="__tabbed_1_6">CLI · Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">UI · Python</label><label for="__tabbed_2_2">UI · PowerShell</label><label for="__tabbed_2_3">SDK · Python</label><label for="__tabbed_2_4">SDK · PowerShell</label><label for="__tabbed_2_5">CLI · Linux</label><label for="__tabbed_2_6">CLI · Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nativehtmlkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
@@ -11858,6 +11919,11 @@ get the answer on stdout. Every command and option with examples.</p>
 <td>PowerShell UI</td>
 <td><a href="https://www.powershellgallery.com/packages/NativeHTMLKit.UI"><code>NativeHTMLKit.UI</code></a> 0.1.1</td>
 <td>Reactive components on the PowerShell SDK</td>
+</tr>
+<tr>
+<td>Demo</td>
+<td><a href="https://pypi.org/project/nativehtmlkit-demo/"><code>nativehtmlkit-demo</code></a> / <a href="https://www.powershellgallery.com/packages/NativeHTMLKit.Demo"><code>NativeHTMLKit.Demo</code></a> 0.1.0</td>
+<td>Browse and run every example (<a href="getting-started/demo/">Try the demo</a>)</td>
 </tr>
 </tbody>
 </table>
