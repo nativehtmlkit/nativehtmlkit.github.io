@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> asyncio tasks; async callbacks; AsyncRpcClient; cancellation.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>async_jobs.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>async_jobs.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/background-work/">background work</a></p>
 <h2 id="source-async_jobspy">Source: <code>async_jobs.py</code><a class="headerlink" href="#source-async_jobspy" title="Permanent link">&para;</a></h2>
@@ -11938,7 +11941,7 @@
 <span class="sd">  * ``asyncio.to_thread`` for synchronous SDK calls (never block the loop)</span>
 <span class="sd">  * ``await adapter.run()`` waits for shutdown; remaining tasks are cancelled afterwards</span>
 
-<span class="sd">Run:  python examples/async_jobs.py      (or: python -m nativehtmlkit run async_jobs:amain)</span>
+<span class="sd">Run:  uv run async_jobs.py      (or: uv run -m nativehtmlkit run async_jobs:amain)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 

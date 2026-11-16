@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> escaping untrusted text; trusted static markup; length limit.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>message_preview.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>message_preview.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/trusted-and-untrusted-content/">trusted and untrusted content</a></p>
 <h2 id="source-pythonmessage_previewpy">Source: <code>python/message_preview.py</code><a class="headerlink" href="#source-pythonmessage_previewpy" title="Permanent link">&para;</a></h2>
@@ -11930,7 +11933,7 @@
 <span class="sd">ui.raw_html() is used only for a fixed, developer-written snippet. Also: a length limit with a</span>
 <span class="sd">computed counter and a sent-messages list.</span>
 
-<span class="sd">Run:  python message_preview.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run message_preview.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nativehtmlkit_ui</span><span class="w"> </span><span class="kn">import</span> <span class="n">UI</span><span class="p">,</span> <span class="n">computed</span><span class="p">,</span> <span class="n">state</span>
 

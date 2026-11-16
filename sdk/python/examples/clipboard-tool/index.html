@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> clipboard; link_activated; open_external; capabilities.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>text_toolbox.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>text_toolbox.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/clipboard-and-desktop/">clipboard and desktop</a></p>
 <h2 id="source-text_toolboxpy">Source: <code>text_toolbox.py</code><a class="headerlink" href="#source-text_toolboxpy" title="Permanent link">&para;</a></h2>
@@ -11939,7 +11942,7 @@
 <span class="sd">  * one delegated click handler for a toolbar of buttons</span>
 <span class="sd">  * ``get_value`` / ``set_value`` and the UTF-16 based ``control_selection`` offsets</span>
 
-<span class="sd">Run:  python examples/text_toolbox.py</span>
+<span class="sd">Run:  uv run text_toolbox.py</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 

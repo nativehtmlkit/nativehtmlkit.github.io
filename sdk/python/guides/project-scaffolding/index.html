@@ -12005,11 +12005,13 @@ this shape:
 <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/tree/main/examples/bulk_rename">examples/bulk_rename</a>
 (see the <a href="../../tutorials/bulk-rename/">bulk rename tutorial</a>).</p>
 <h2 id="generate-a-project">Generate a project<a class="headerlink" href="#generate-a-project" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nativehtmlkit
-nativehtmlkit-new<span class="w"> </span>InventoryTool<span class="w"> </span>--name<span class="w"> </span><span class="s2">"Inventory tool"</span>
+<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>--from<span class="w"> </span>nativehtmlkit<span class="w"> </span>nativehtmlkit-new<span class="w"> </span>InventoryTool<span class="w"> </span>--name<span class="w"> </span><span class="s2">"Inventory tool"</span>
 <span class="nb">cd</span><span class="w"> </span>InventoryTool
-python<span class="w"> </span>app.py<span class="w">                      </span><span class="c1"># or: uv run app.py</span>
+uv<span class="w"> </span>run<span class="w"> </span>app.py<span class="w">                      </span><span class="c1"># creates .venv and installs nativehtmlkit on first run</span>
 </code></pre></div>
+<p><code>uvx</code> runs the generator without installing anything; the generated <code>pyproject.toml</code> makes the
+folder a uv project. The generator's own closing message still says <code>python app.py</code>; use
+<code>uv run app.py</code>.</p>
 <p>A window with a name field and an <strong>Add item</strong> button opens. The command prints the files it
 created and refuses to write into a directory that is not empty (exit status 2). Options:</p>
 <table>
@@ -12030,7 +12032,7 @@ created and refuses to write into a directory that is not empty (exit status 2).
 </tr>
 <tr>
 <td><code>--python INTERPRETER</code></td>
-<td>Interpreter written into the optional <code>app.toml</code> (default: the one running the command).</td>
+<td>Interpreter written into the optional <code>app.toml</code> (default: the one running the command; under <code>uvx</code> a temporary one in uv's cache, so set <code>program</code> in <code>app.toml</code> to <code>.venv</code>'s interpreter if you use the manifest).</td>
 </tr>
 </tbody>
 </table>
@@ -12069,7 +12071,7 @@ created and refuses to write into a directory that is not empty (exit status 2).
 <code>org.nativehtmlkit.examples.inventory_tool</code>). Change <code>APP_ID</code> in <code>app.py</code> and <code>id</code> in <code>app.toml</code>
 to your own reverse-DNS name before you ship.</p>
 <h2 id="how-the-generated-app-starts">How the generated app starts<a class="headerlink" href="#how-the-generated-app-starts" title="Permanent link">&para;</a></h2>
-<p><code>python app.py</code> starts the native host, and the host runs <code>app.py</code> a second time as its backend
+<p><code>uv run app.py</code> starts the native host, and the host runs <code>app.py</code> a second time as its backend
 (see <a href="../lifecycle/">lifecycle</a>). That is why the generated code keeps all work inside <code>main()</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">HERE</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
 
@@ -12153,7 +12155,7 @@ same window:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"check passed"</span><span class="p">)</span>
     <span class="n">threading</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">application</span><span class="o">.</span><span class="n">request_quit</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>check_app:check<span class="w">     </span><span class="c1"># prints: check passed</span>
+<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>check_app:check<span class="w">     </span><span class="c1"># prints: check passed</span>
 </code></pre></div>
 <p>A failed <code>assert</code> ends the run with exit status 1 and the traceback. Headless mode has no pointer
 or keyboard input, so call the same functions the handlers call. The repository's

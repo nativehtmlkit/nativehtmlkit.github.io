@@ -12499,7 +12499,7 @@ documents, callbacks and lifecycle hooks. Everything on this page is in <code>na
 <div class="highlight"><pre><span></span><code><span class="n">Application</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">app_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="s2">"single"</span><span class="p">,</span>
                   <span class="n">startup_timeout_ms</span><span class="o">=</span><span class="mi">30_000</span><span class="p">,</span> <span class="n">shutdown_timeout_ms</span><span class="o">=</span><span class="mi">5_000</span><span class="p">,</span> <span class="n">max_windows</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Application</span>
 </code></pre></div>
-<p>The normal entry point for <code>python app.py</code>, <code>uv run app.py</code> and <code>python -m package.app</code>.</p>
+<p>The normal entry point for <code>uv run app.py</code> and <code>uv run -m package.app</code>.</p>
 <p>The call has <strong>two roles</strong>:</p>
 <ol>
 <li><strong>Launcher</strong> (the process you started). It validates the options, writes a private temporary
@@ -12594,7 +12594,7 @@ windows; see <a href="../environment-variables/">environment variables</a>).</p>
 <code>host.hello</code>, requires protocol v1 and removes those four variables from <code>os.environ</code> (also when
 it fails), so child processes never inherit the credential. Use it in a backend started from your
 own manifest (<code>nativehtmlkit-python-host run --app app.toml</code>); <code>Application.start()</code> and
-<code>python -m nativehtmlkit run</code> call it for you.</p>
+<code>uv run -m nativehtmlkit run</code> call it for you.</p>
 <p>Raises <code>StartupError</code> when the endpoint or token variable is missing, <code>ProtocolError</code> for a token
 that is not 64 hexadecimal characters or a host that did not negotiate protocol v1, <code>RpcError</code> if
 the host refuses authentication, and <code>OSError</code> if the endpoint cannot be opened.</p>

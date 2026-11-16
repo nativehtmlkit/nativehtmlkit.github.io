@@ -12069,12 +12069,11 @@ test the whole thing without a screen.</p>
 <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/tree/main/examples/bulk_rename">examples/bulk_rename</a>:
 <code>app.py</code>, <code>index.html</code> and <code>style.css</code>. Every <code>app.py</code> excerpt below is copied from that file,
 which the repository's test suite runs against the real native host.</p>
-<p><strong>You need</strong> Python 3.10+ on Linux x64 (glibc 2.39+) or Windows x64, a desktop session, and the
-package: <code>python -m pip install nativehtmlkit</code>.</p>
+<p><strong>You need</strong> <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on Linux x64 (glibc 2.39+) or Windows x64, and a desktop session.</p>
 <h2 id="step-1-create-the-project">Step 1: create the project<a class="headerlink" href="#step-1-create-the-project" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nativehtmlkit-new<span class="w"> </span>BulkRename<span class="w"> </span>--name<span class="w"> </span><span class="s2">"Bulk rename"</span>
+<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>--from<span class="w"> </span>nativehtmlkit<span class="w"> </span>nativehtmlkit-new<span class="w"> </span>BulkRename<span class="w"> </span>--name<span class="w"> </span><span class="s2">"Bulk rename"</span>
 <span class="nb">cd</span><span class="w"> </span>BulkRename
-python<span class="w"> </span>app.py
+uv<span class="w"> </span>run<span class="w"> </span>app.py<span class="w">               </span><span class="c1"># installs nativehtmlkit into the project on first run</span>
 </code></pre></div>
 <p>A window with a name field and an <strong>Add item</strong> button opens. Close it. You now have <code>app.py</code>,
 <code>index.html</code>, <code>style.css</code>, <code>pyproject.toml</code> and <code>app.toml</code> (see
@@ -12129,7 +12128,7 @@ layout in which only the table scrolls (see <a href="../../guides/styling-and-la
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <p>Run it: the window shows the empty tool. The launcher passes your command-line arguments to the
-backend run, so <code>python app.py ~/Pictures</code> will reach <code>build()</code> as <code>folder</code> in step 5.</p>
+backend run, so <code>uv run app.py ~/Pictures</code> will reach <code>build()</code> as <code>folder</code> in step 5.</p>
 <p><code>build(app, ...)</code> returns the object that owns the window. <code>main()</code> uses it, and so will the test
 in step 9.</p>
 <h2 id="step-4-plan-the-renames-without-any-ui">Step 4: plan the renames without any UI<a class="headerlink" href="#step-4-plan-the-renames-without-any-ui" title="Permanent link">&para;</a></h2>
@@ -12306,7 +12305,7 @@ turns it on, <code>remove_attribute</code> turns it off.</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Run <code>python app.py &lt;a folder with some files&gt;</code>. Type <code>IMG_</code> in <strong>Find</strong> and <code>photo-</code> in
+<p>Run <code>uv run app.py &lt;a folder with some files&gt;</code>. Type <code>IMG_</code> in <strong>Find</strong> and <code>photo-</code> in
 <strong>Replace with</strong>: the preview updates while you type, and the summary counts the files that would
 be renamed.</p>
 <h2 id="step-6-choose-the-folder-with-the-native-dialog">Step 6: choose the folder with the native dialog<a class="headerlink" href="#step-6-choose-the-folder-with-the-native-dialog" title="Permanent link">&para;</a></h2>
@@ -12426,7 +12425,7 @@ Save this as <code>check_rename.py</code> next to <code>app.py</code>:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"check passed"</span><span class="p">)</span>
     <span class="n">threading</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">application</span><span class="o">.</span><span class="n">request_quit</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>check_rename:check<span class="w">    </span><span class="c1"># prints: check passed</span>
+<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>check_rename:check<span class="w">    </span><span class="c1"># prints: check passed</span>
 </code></pre></div>
 <p><code>set_value</code> and <code>set_checked</code> do not fire <code>input</code>/<code>change</code> events, so the test calls
 <code>update_preview()</code> itself. A failed <code>assert</code> ends the run with exit status 1 and a traceback. The

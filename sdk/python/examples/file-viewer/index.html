@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> open_files/save_file/choose_folder; wait=False futures; file filters; -32001 fallback.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>file_viewer.py<span class="w"> </span><span class="o">[</span>FILE<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>file_viewer.py<span class="w"> </span><span class="o">[</span>FILE<span class="o">]</span>
 </code></pre></div>
 <p>Related guide: <a href="../../guides/file-dialogs/">file dialogs</a></p>
 <h2 id="source-file_viewerpy">Source: <code>file_viewer.py</code><a class="headerlink" href="#source-file_viewerpy" title="Permanent link">&para;</a></h2>
@@ -11939,7 +11942,7 @@
 <span class="sd">  * graceful degradation: without a desktop session (headless/CI) dialogs fail with RpcError -32001</span>
 <span class="sd">  * showing file content safely with ``set_value`` (plain text) and escaping file names</span>
 
-<span class="sd">Run:  python examples/file_viewer.py [FILE]</span>
+<span class="sd">Run:  uv run file_viewer.py [FILE]</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 

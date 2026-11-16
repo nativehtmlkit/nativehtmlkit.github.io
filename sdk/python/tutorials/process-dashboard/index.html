@@ -11995,8 +11995,8 @@
 <p>You will build <strong>Process Dashboard</strong>: a native window with a table of running processes that
 refreshes itself in the background, can be filtered and sorted, paused, and copied to the
 clipboard. It works the same on Linux and Windows.</p>
-<p><strong>Time:</strong> about 30 minutes. <strong>You need:</strong> Python 3.10+ on Linux x64 (glibc 2.39+) or Windows x64,
-<code>python -m pip install nativehtmlkit</code>, and the first window from
+<p><strong>Time:</strong> about 30 minutes. <strong>You need:</strong> <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on Linux x64 (glibc 2.39+) or Windows x64,
+a project with the SDK (<code>uv init --app dashboard &amp;&amp; cd dashboard &amp;&amp; uv add nativehtmlkit</code>), and the first window from
 <a href="../../getting-started/">getting started</a>.</p>
 <p>The code is in
 <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/tree/main/examples/process_dashboard">examples/process_dashboard</a>:
@@ -12132,7 +12132,7 @@ and CPU time.</p>
 <span class="sd">  * building HTML rows from data with ``html.escape``</span>
 <span class="sd">  * filling the page before ``app.run()`` announces readiness, so the window opens complete</span>
 
-<span class="sd">Run:    python examples/process_dashboard/step1_snapshot.py</span>
+<span class="sd">Run:    uv run process_dashboard/step1_snapshot.py</span>
 <span class="sd">Guide:  docs/tutorials/process-dashboard.md (step 1 of 3)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
@@ -12185,7 +12185,7 @@ and CPU time.</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Run <code>python step1_snapshot.py</code>.</p>
+<p>Run <code>uv run step1_snapshot.py</code>.</p>
 <ul>
 <li>The page is a Python string. Every element the code changes has an <code>id</code>: here only the table
   body <code>rows</code>.</li>
@@ -12205,7 +12205,7 @@ and CPU time.</p>
 <span class="sd">  * reading controls with ``get_value``</span>
 <span class="sd">  * ``set_text`` for text that must never be parsed as HTML</span>
 
-<span class="sd">Run:    python examples/process_dashboard/step2_filter.py</span>
+<span class="sd">Run:    uv run process_dashboard/step2_filter.py</span>
 <span class="sd">Guide:  docs/tutorials/process-dashboard.md (step 2 of 3)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
@@ -12310,7 +12310,7 @@ few seconds, and the callbacks only filter and sort the cached snapshot.</p>
 <span class="sd">  * copying the table to the clipboard with ``set_clipboard_text`` (and a fallback without one)</span>
 <span class="sd">  * stopping the thread from ``app.on_shutdown``</span>
 
-<span class="sd">Run:    python examples/process_dashboard/dashboard.py [--refresh-seconds 3]</span>
+<span class="sd">Run:    uv run process_dashboard/dashboard.py [--refresh-seconds 3]</span>
 <span class="sd">Guide:  docs/tutorials/process-dashboard.md (step 3 of 3)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
@@ -12482,7 +12482,7 @@ few seconds, and the callbacks only filter and sort the cached snapshot.</p>
   (for example <code>StaleDocumentError</code>); the loop ends quietly.</li>
 <li><strong>Copy table</strong> uses <code>app.set_clipboard_text</code> inside <code>try</code>/<code>except RpcError</code>: some sessions (for
   example headless test runs) have no clipboard and report error -32001.</li>
-<li><code>--refresh-seconds</code> is a normal command-line option: <code>python dashboard.py --refresh-seconds 10</code>.
+<li><code>--refresh-seconds</code> is a normal command-line option: <code>uv run dashboard.py --refresh-seconds 10</code>.
   The arguments are parsed in <code>main()</code>; the host re-runs the script with the same arguments.</li>
 </ul>
 <h2 id="test-it-without-a-screen">Test it without a screen<a class="headerlink" href="#test-it-without-a-screen" title="Permanent link">&para;</a></h2>
@@ -12499,7 +12499,7 @@ few seconds, and the callbacks only filter and sort the cached snapshot.</p>
 <p>See <code>process_dashboard</code> in
 <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/blob/main/tests/integration/example_checks.py">tests/integration/example_checks.py</a>
 for the complete version, and run a check of your own with
-<code>NATIVEHTMLKIT_TEST_MODE=1 python -m nativehtmlkit run module:function</code> as shown in
+<code>NATIVEHTMLKIT_TEST_MODE=1 uv run -m nativehtmlkit run module:function</code> as shown in
 <a href="../../guides/project-scaffolding/#test-it-headless">project scaffolding</a>.</p>
 <h2 id="what-you-learned">What you learned<a class="headerlink" href="#what-you-learned" title="Permanent link">&para;</a></h2>
 <ul>

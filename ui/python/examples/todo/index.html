@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> slot pool for rows with buttons; bound button labels; computed counts.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>todo.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>todo.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/lists-and-conditional-content/">lists and conditional content</a></p>
 <h2 id="source-pythontodopy">Source: <code>python/todo.py</code><a class="headerlink" href="#source-pythontodopy" title="Permanent link">&para;</a></h2>
@@ -11929,7 +11932,7 @@
 <span class="sd">MAX_TASKS rows up front and shows, hides and relabels them from state (ui.when + bound text +</span>
 <span class="sd">bound button labels). Also: computed counts, a disabled Add button and "Clear done".</span>
 
-<span class="sd">Run:  python todo.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run todo.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">count</span>
 

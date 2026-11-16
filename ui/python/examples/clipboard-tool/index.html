@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> SDK clipboard calls from UI handlers; error handling; computed preview.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>clipboard_tool.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>clipboard_tool.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/mixing-ui-and-sdk-calls/">mixing ui and sdk calls</a></p>
 <h2 id="source-pythonclipboard_toolpy">Source: <code>python/clipboard_tool.py</code><a class="headerlink" href="#source-pythonclipboard_toolpy" title="Permanent link">&para;</a></h2>
@@ -11929,7 +11932,7 @@
 <span class="sd">event handler, reporting SDK errors in the UI instead of crashing (the clipboard is</span>
 <span class="sd">unavailable in headless test mode, error -32001), and a computed live preview.</span>
 
-<span class="sd">Run:  python clipboard_tool.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run clipboard_tool.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 

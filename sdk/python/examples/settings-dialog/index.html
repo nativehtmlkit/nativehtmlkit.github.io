@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> show_dialog/close_dialog; popovers; set_environment; replaceable stylesheet; form validation.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>settings_dialog.py<span class="w"> </span><span class="o">[</span>SETTINGS_FILE<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>settings_dialog.py<span class="w"> </span><span class="o">[</span>SETTINGS_FILE<span class="o">]</span>
 </code></pre></div>
 <p>Related guide: <a href="../../guides/dialogs-and-popovers/">dialogs and popovers</a></p>
 <h2 id="source-settings_dialogpy">Source: <code>settings_dialog.py</code><a class="headerlink" href="#source-settings_dialogpy" title="Permanent link">&para;</a></h2>
@@ -11941,7 +11944,7 @@
 <span class="sd">  * replacing one stylesheet in place (``add_stylesheet`` once, then ``replace_stylesheet``)</span>
 <span class="sd">  * saving settings as JSON</span>
 
-<span class="sd">Run:  python examples/settings_dialog.py [SETTINGS_FILE]</span>
+<span class="sd">Run:  uv run settings_dialog.py [SETTINGS_FILE]</span>
 <span class="sd">Default settings file: &lt;config folder&gt;/NativeHTMLKit-Examples/settings.json</span>
 <span class="sd">(%APPDATA% on Windows, $XDG_CONFIG_HOME or ~/.config on Linux).</span>
 <span class="sd">"""</span>

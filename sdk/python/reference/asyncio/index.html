@@ -12161,13 +12161,13 @@ exception handler (<code>loop.call_exception_handler</code>) and do not stop lat
     <span class="k">await</span> <span class="n">adapter</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">Application</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Async demo"</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>   <span class="c1"># python app.py</span>
+    <span class="k">with</span> <span class="n">Application</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Async demo"</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>   <span class="c1"># uv run app.py</span>
         <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">amain</span><span class="p">(</span><span class="n">app</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p><code>python -m nativehtmlkit run app:amain</code> also works: the runner awaits a coroutine returned by the
+<p><code>uv run -m nativehtmlkit run app:amain</code> also works: the runner awaits a coroutine returned by the
 entry point (<code>asyncio.run</code>) and then calls <code>app.run()</code>, which returns at once when <code>amain</code> already
 waited for shutdown.</p>
 <p>See the <a href="../../guides/asyncio/">asyncio guide</a> and the examples

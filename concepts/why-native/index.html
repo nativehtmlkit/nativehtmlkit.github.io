@@ -11784,7 +11784,7 @@
 <h2 id="what-you-gain">What you gain<a class="headerlink" href="#what-you-gain" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>One language for the logic.</strong> Event handlers are ordinary Python functions or PowerShell scriptblocks. There is no front-end/back-end split, no bundler and no IPC layer for you to design.</li>
-<li><strong>Small, self-contained installs.</strong> The SDK wheel or module bundles the native host; <code>pip install nativehtmlkit</code> or <code>Install-Module NativeHTMLKit</code> is the whole runtime. The CLI is a single archive.</li>
+<li><strong>Small, self-contained installs.</strong> The SDK wheel or module bundles the native host; <code>uv add nativehtmlkit</code> or <code>Install-Module NativeHTMLKit</code> is the whole runtime. The CLI is a single archive.</li>
 <li><strong>No network surface.</strong> There is no HTTP server and the renderer never fetches remote resources (see the <a href="../security/">security model</a>).</li>
 <li><strong>Real native windows and services.</strong> Native file and folder dialogs, clipboard, multiple windows, window state, desktop preferences, accessibility integration and live RGBA bitmaps are host features, not browser emulations.</li>
 <li><strong>Scripts become apps.</strong> A PowerShell admin script or a shell pipeline can ask the user a question in a proper window (<code>nativehtmlkit select</code>, <code>form</code>) and continue with the answer.</li>

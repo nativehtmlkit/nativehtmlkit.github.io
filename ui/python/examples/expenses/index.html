@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> two-way inputs and select; validation; computed totals and filter; empty state.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>expenses.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>expenses.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/forms-and-inputs/">forms and inputs</a></p>
 <h2 id="source-pythonexpensespy">Source: <code>python/expenses.py</code><a class="headerlink" href="#source-pythonexpensespy" title="Permanent link">&para;</a></h2>
@@ -11929,7 +11932,7 @@
 <span class="sd">computed value, a filtered text list, an empty-state region with ui.when(), and Decimal input</span>
 <span class="sd">validation. This is the finished app of docs/python/tutorials/expense-tracker.md.</span>
 
-<span class="sd">Run:  python expenses.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run expenses.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">InvalidOperation</span>
 

@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> several UIs in one application; shared state; window events; closing windows from code.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>multi_window.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>multi_window.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/multiple-windows/">multiple windows</a></p>
 <h2 id="source-pythonmulti_windowpy">Source: <code>python/multi_window.py</code><a class="headerlink" href="#source-pythonmulti_windowpy" title="Permanent link">&para;</a></h2>
@@ -11931,7 +11934,7 @@
 <span class="sd">from code. Each inspector is a new UI; mounting one registers an SDK shutdown callback, so this</span>
 <span class="sd">example caps the number of inspectors (see the B-0003 limitation).</span>
 
-<span class="sd">Run:  python multi_window.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run multi_window.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nativehtmlkit_ui</span><span class="w"> </span><span class="kn">import</span> <span class="n">UI</span><span class="p">,</span> <span class="n">computed</span><span class="p">,</span> <span class="n">state</span>
 

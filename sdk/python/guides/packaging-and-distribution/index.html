@@ -11999,11 +11999,12 @@ normally), or load the markup as a string with <code>load_html(..., asset_root=.
 <span class="k">[project.gui-scripts]</span>
 <span class="n">myapp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"myapp.app:main"</span>
 </code></pre></div>
-<p>Users install with <code>pip install myapp</code> or <code>uv tool install myapp</code>, and start <code>myapp</code> (or
-<code>python -m myapp</code> with a <code>myapp/__main__.py</code> that calls <code>main()</code>). <code>Application.start()</code> re-runs the
-same command as the backend. Both forms were checked on Linux; on Windows, <code>python -m myapp</code> uses
-the same mechanism as <code>python app.py</code>, while generated <code>.exe</code> script launchers were not part of the
-0.1.2 checks, so try yours before relying on it.</p>
+<p>Users install with <code>uv tool install myapp</code> and start <code>myapp</code>; during development, <code>uv run -m myapp</code>
+(with a <code>myapp/__main__.py</code> that calls <code>main()</code>) or <code>uv run myapp</code> work in the project.
+<code>Application.start()</code> re-runs the same Python command as the backend. On Linux this was checked
+for installed script launchers and <code>-m</code>; on Windows, <code>-m</code> uses the same mechanism as
+<code>uv run app.py</code>, while generated <code>.exe</code> script launchers were not part of the 0.1.2 checks, so try
+yours before relying on it.</p>
 <p>Platform support follows the <code>nativehtmlkit</code> wheels: Linux x64 (glibc 2.39+) and Windows x64,
 Python 3.10+. The source distribution of <code>nativehtmlkit</code> has no host.</p>
 <h2 id="identity-and-data">Identity and data<a class="headerlink" href="#identity-and-data" title="Permanent link">&para;</a></h2>

@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> responsive grid; themes and density; extra CSS; one-second timer.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>dashboard.py<span class="w"> </span><span class="o">[</span>cobalt<span class="p">|</span>graphite<span class="p">|</span>daylight<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>dashboard.py<span class="w"> </span><span class="o">[</span>cobalt<span class="p">|</span>graphite<span class="p">|</span>daylight<span class="o">]</span>
 </code></pre></div>
 <p>Related guide: <a href="../../guides/layouts/">layouts</a></p>
 <h2 id="source-pythondashboardpy">Source: <code>python/dashboard.py</code><a class="headerlink" href="#source-pythondashboardpy" title="Permanent link">&para;</a></h2>
@@ -11929,7 +11932,7 @@
 <span class="sd">extra_css with your own classes and token overrides, ui.element() for a custom-styled tag, and</span>
 <span class="sd">a periodic timer thread that updates state through ui.post().</span>
 
-<span class="sd">Run:  python dashboard.py [cobalt|graphite|daylight]      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run dashboard.py [cobalt|graphite|daylight]      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>

@@ -12116,7 +12116,7 @@ line two",3
 for example with Python's <code>csv</code> module:</p>
 <!-- test: exit=124 calls="124@2x2" -->
 <div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'host;status\nweb-01;healthy\nweb-02;degraded\n'</span><span class="w"> </span><span class="p">|</span>
-<span class="w">  </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import csv,sys; csv.writer(sys.stdout, lineterminator="\n").writerows(csv.reader(sys.stdin, delimiter=";"))'</span><span class="w"> </span><span class="p">|</span>
+<span class="w">  </span>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">'import csv,sys; csv.writer(sys.stdout, lineterminator="\n").writerows(csv.reader(sys.stdin, delimiter=";"))'</span><span class="w"> </span><span class="p">|</span>
 <span class="w">  </span>nativehtmlkit<span class="w"> </span><span class="k">select</span><span class="w"> </span>--input-format<span class="w"> </span>csv
 </code></pre></div>
 <p>A header without data rows: <code>select</code> refuses it, <code>view</code> shows an empty table:</p>

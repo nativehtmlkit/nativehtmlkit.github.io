@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> initial state from a file; computed validation message; atomic JSON save; revert from disk.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>settings_editor.py<span class="w"> </span><span class="o">[</span>PATH<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>settings_editor.py<span class="w"> </span><span class="o">[</span>PATH<span class="o">]</span>
 </code></pre></div>
 <p>Related guide: <a href="../../guides/forms-and-inputs/">forms and inputs</a></p>
 <h2 id="source-pythonsettings_editorpy">Source: <code>python/settings_editor.py</code><a class="headerlink" href="#source-pythonsettings_editorpy" title="Permanent link">&para;</a></h2>
@@ -11928,7 +11931,7 @@
 <span class="sd">Teaches: loading initial state from a file, a computed validation message and an "unsaved</span>
 <span class="sd">changes" badge, buttons that save (atomically) and revert, a status alert, and starting the UI</span>
 <span class="sd">in the theme the user saved.</span>
-<span class="sd">Run:     python settings_editor.py [PATH]</span>
+<span class="sd">Run:     uv run settings_editor.py [PATH]</span>
 <span class="sd">         (default file: nativehtmlkit-settings.json in your application-data folder:</span>
 <span class="sd">         %APPDATA% on Windows, $XDG_CONFIG_HOME or ~/.config on Linux)</span>
 <span class="sd">Guide:   docs/python/tutorials/settings-editor.md (step 2 of 2)</span>

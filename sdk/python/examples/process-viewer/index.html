@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> rendering data as a table; input event value; sortable headers with aria-sort.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>process_viewer.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>process_viewer.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/updating-the-page/">updating the page</a></p>
 <h2 id="source-process_viewerpy">Source: <code>process_viewer.py</code><a class="headerlink" href="#source-process_viewerpy" title="Permanent link">&para;</a></h2>
@@ -11940,7 +11943,7 @@
 <span class="sd">The process list uses only the standard library: ``/proc`` on Linux and the Win32 API (through</span>
 <span class="sd">``ctypes``) on Windows. In your own code, ``psutil`` is a good alternative.</span>
 
-<span class="sd">Run:  python examples/process_viewer.py</span>
+<span class="sd">Run:  uv run process_viewer.py</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 

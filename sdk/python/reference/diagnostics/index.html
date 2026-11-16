@@ -11994,7 +11994,7 @@ credentials. Recording never raises into your code and never blocks the transpor
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nativehtmlkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">diagnostics_session_id</span><span class="p">,</span> <span class="n">export_support_bundle</span>
 </code></pre></div>
 <h2 id="levels">Levels<a class="headerlink" href="#levels" title="Permanent link">&para;</a></h2>
-<p>Set with <code>NATIVEHTMLKIT_DIAGNOSTICS</code> (or <code>nativehtmlkit-python --diagnostics LEVEL ...</code>):</p>
+<p>Set with <code>NATIVEHTMLKIT_DIAGNOSTICS</code> (or <code>uv run nativehtmlkit-python --diagnostics LEVEL ...</code>):</p>
 <table>
 <thead>
 <tr>
@@ -12120,8 +12120,8 @@ process's session, from its files or, without files, its in-memory history). Rai
 <code>FileExistsError</code> unless <code>overwrite=True</code>, <code>ValueError</code> for an invalid session id. Never included:
 RPC payloads, form values, credentials, environment variables, raw host output, screenshots.</p>
 <p>From the command line (uses the most recently recorded session unless <code>--session</code> is given):</p>
-<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_DIAGNOSTICS</span><span class="o">=</span>trace<span class="w"> </span>python<span class="w"> </span>app.py<span class="w">          </span><span class="c1"># reproduce the problem</span>
-nativehtmlkit-python<span class="w"> </span>support<span class="w"> </span>bundle.zip<span class="w">                </span><span class="c1"># then export it</span>
+<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_DIAGNOSTICS</span><span class="o">=</span>trace<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>app.py<span class="w">          </span><span class="c1"># reproduce the problem</span>
+uv<span class="w"> </span>run<span class="w"> </span>nativehtmlkit-python<span class="w"> </span>support<span class="w"> </span>bundle.zip<span class="w">                </span><span class="c1"># then export it</span>
 </code></pre></div>
 <h2 id="host-counters">Host counters<a class="headerlink" href="#host-counters" title="Permanent link">&para;</a></h2>
 <p><code>app.host_diagnostics()</code> returns the host's view (<code>phase</code>, <code>windows</code>, <code>pending_jobs</code>,

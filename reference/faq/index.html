@@ -11679,8 +11679,8 @@ Events are delivered in order on one worker thread, and <code>open_files()</code
 In headless test mode (<code>NATIVEHTMLKIT_TEST_MODE=1</code>) there is no native event loop: clipboard and native dialogs fail with RPC error <code>-32001</code>. Catch the error and show a message, as the examples do.</p>
 <p><strong>Can I simulate clicks in headless tests?</strong>
 There is no synthetic input. You can drive documented document operations — for example <code>request_submit</code> fires the form's <code>submit</code> event and <code>replace_control_range</code> fires <code>input</code> — and read the DOM back with <code>get_text</code>, <code>get_value</code> or <code>get_html</code>. Real input needs an interactive desktop.</p>
-<p><strong><code>pip install nativehtmlkit</code> fails or installs a package without the host on Linux.</strong>
-The released Linux wheel is <code>manylinux_2_39_x86_64</code>: it needs glibc 2.39 or newer. On older systems pip may fall back to the source package, which has no native host. Run <code>nativehtmlkit-python doctor</code> to check.</p>
+<p><strong><code>uv add nativehtmlkit</code> fails or installs a package without the host on Linux.</strong>
+The released Linux wheel is <code>manylinux_2_39_x86_64</code>: it needs glibc 2.39 or newer. On older systems the installer can only fall back to the source package, which has no native host. Run <code>uv run nativehtmlkit-python doctor</code> to check.</p>
 <p><strong>Does it work with Windows PowerShell 5.1?</strong>
 Yes, on Windows, for both the SDK and the UI module. Linux needs PowerShell 7.2 or newer.</p>
 <p><strong>Does it support macOS?</strong>

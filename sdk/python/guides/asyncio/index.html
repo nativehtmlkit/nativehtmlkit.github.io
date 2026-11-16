@@ -12061,7 +12061,7 @@ disposed. Cancel your own tasks then:</p>
 <p>Cancelling the task that awaits <code>adapter.run()</code> closes the connection (the host then reports an
 application failure); quit with <code>request_quit</code> for an orderly end.</p>
 <h2 id="the-host-first-runner">The host-first runner<a class="headerlink" href="#the-host-first-runner" title="Permanent link">&para;</a></h2>
-<p><code>python -m nativehtmlkit run app:amain</code> calls <code>amain(app)</code>, runs the returned coroutine with
+<p><code>uv run -m nativehtmlkit run app:amain</code> calls <code>amain(app)</code>, runs the returned coroutine with
 <code>asyncio.run</code> and then calls <code>app.run()</code>. Because <code>amain</code> awaited <code>adapter.run()</code>, that final
 call returns at once.</p>
 <p>Examples: <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/blob/main/examples/async_counter.py">async_counter.py</a> (minimal),

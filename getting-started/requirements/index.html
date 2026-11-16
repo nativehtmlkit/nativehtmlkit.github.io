@@ -11844,8 +11844,8 @@
 </table>
 <p>If <code>pip</code> cannot find a compatible wheel on Linux, your distribution's glibc is probably older than 2.39. Do not fall back to the source distribution and expect a window: it contains no native host.</p>
 <h2 id="check-an-installation">Check an installation<a class="headerlink" href="#check-an-installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nativehtmlkit-python<span class="w"> </span>doctor<span class="w">      </span><span class="c1"># Python: the host's environment report</span>
-nativehtmlkit-python<span class="w"> </span>version<span class="w">     </span><span class="c1"># Python: SDK, protocol and bundled host versions as JSON</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>nativehtmlkit-python<span class="w"> </span>doctor<span class="w">      </span><span class="c1"># Python (in your uv project): the host's environment report</span>
+uv<span class="w"> </span>run<span class="w"> </span>nativehtmlkit-python<span class="w"> </span>version<span class="w">     </span><span class="c1"># Python: SDK, protocol and bundled host versions as JSON</span>
 nativehtmlkit<span class="w"> </span>doctor<span class="w">             </span><span class="c1"># CLI: which host it found and its version</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-Module</span> <span class="n">NativeHTMLKit</span> <span class="n">-ListAvailable</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Version</span>

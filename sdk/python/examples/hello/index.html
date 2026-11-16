@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> application lifecycle; get_value; set_text.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>hello.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>hello.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/lifecycle/">lifecycle</a></p>
 <h2 id="source-hellopy">Source: <code>hello.py</code><a class="headerlink" href="#source-hellopy" title="Permanent link">&para;</a></h2>
@@ -11937,7 +11940,7 @@
 <span class="sd">  * reading an input value with ``get_value``</span>
 <span class="sd">  * writing untrusted text safely with ``set_text`` (it never parses HTML)</span>
 
-<span class="sd">Run:  python examples/hello.py      (or: uv run examples/hello.py)</span>
+<span class="sd">Run:  uv run hello.py</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 

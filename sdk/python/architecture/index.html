@@ -12127,8 +12127,8 @@ other, which threads run your code, and why handles become stale. For the API it
 <a href="../reference/">reference</a>.</p>
 <h2 id="process-model">Process model<a class="headerlink" href="#process-model" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
-  L["Launcher&lt;br/&gt;python app.py&lt;br/&gt;(Application.start)"] -- "starts, relays output,&lt;br/&gt;exits with its status" --&gt; H["Native host&lt;br/&gt;nativehtmlkit-host run --app"]
-  H -- "starts and supervises" --&gt; B["Backend&lt;br/&gt;python app.py (again)&lt;br/&gt;Application returned here"]
+  L["Launcher&lt;br/&gt;uv run app.py: python app.py&lt;br/&gt;(Application.start)"] -- "starts, relays output,&lt;br/&gt;exits with its status" --&gt; H["Native host&lt;br/&gt;nativehtmlkit-host run --app"]
+  H -- "starts and supervises" --&gt; B["Backend&lt;br/&gt;python app.py (again, same interpreter)&lt;br/&gt;Application returned here"]
   B &lt;-- "authenticated local socket / named pipe&lt;br/&gt;length-prefixed JSON-RPC (wire v1)" --&gt; H</code></pre>
 <p>Three roles cooperate:</p>
 <table>
@@ -12169,7 +12169,7 @@ and receives events.</p>
    connects with <a href="../reference/application/#applicationfrom_environment-classmethod"><code>from_environment()</code></a>
    and returns the <code>Application</code>.</li>
 </ol>
-<p>Consequently code before <code>start()</code> runs in both processes. <code>python -m nativehtmlkit run
+<p>Consequently code before <code>start()</code> runs in both processes. <code>uv run -m nativehtmlkit run
 module:func</code> avoids that: its launcher never imports your module, and its backend imports it once,
 after connecting.</p>
 <h3 id="host-resolution-and-verification">Host resolution and verification<a class="headerlink" href="#host-resolution-and-verification" title="Permanent link">&para;</a></h3>
@@ -12177,7 +12177,7 @@ after connecting.</p>
 override), else the wheel's bundled <code>_bin/nativehtmlkit-host[.exe]</code>, whose SHA-256 must match
 <code>_bin/HOST-MANIFEST.json</code> on <strong>every</strong> launch (<code>HostVerificationError</code> otherwise), else, only with
 <code>NATIVEHTMLKIT_ALLOW_PATH_HOST=1</code>, an absolute <code>PATH</code> entry (unverified, with a warning).
-<code>nativehtmlkit-python version</code> reports which one is used and whether the build identity matches.</p>
+<code>uv run nativehtmlkit-python version</code> reports which one is used and whether the build identity matches.</p>
 <h3 id="lifetime-binding">Lifetime binding<a class="headerlink" href="#lifetime-binding" title="Permanent link">&para;</a></h3>
 <p>The host must not outlive the launcher, and the backend must not outlive the host:</p>
 <ul>

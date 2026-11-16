@@ -11948,7 +11948,7 @@ and the final app <a href="https://github.com/nativehtmlkit/nativehtmlkit_ui/blo
 
 <span class="sd">Teaches: UI, state(), two-way ui.input / ui.select / ui.checkbox, computed() with automatic</span>
 <span class="sd">         dependency tracking, a bound ui.text, mount/run/dispose.</span>
-<span class="sd">Run:     python settings_editor_step1.py</span>
+<span class="sd">Run:     uv run settings_editor_step1.py</span>
 <span class="sd">Guide:   docs/python/tutorials/settings-editor.md (step 1 of 2)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nativehtmlkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
@@ -11985,7 +11985,7 @@ and the final app <a href="https://github.com/nativehtmlkit/nativehtmlkit_ui/blo
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Run <code>python settings_editor.py</code> and edit the fields: the summary below follows every change.</p>
+<p>Run <code>uv run settings_editor.py</code> and edit the fields: the summary below follows every change.</p>
 <ul>
 <li>Each <code>state()</code> holds one setting. <code>ui.input(name, ...)</code> is two-way; <code>kind="email"</code> gives an
   e-mail field.</li>
@@ -12004,7 +12004,7 @@ and the final app <a href="https://github.com/nativehtmlkit/nativehtmlkit_ui/blo
 <span class="sd">Teaches: loading initial state from a file, a computed validation message and an "unsaved</span>
 <span class="sd">changes" badge, buttons that save (atomically) and revert, a status alert, and starting the UI</span>
 <span class="sd">in the theme the user saved.</span>
-<span class="sd">Run:     python settings_editor.py [PATH]</span>
+<span class="sd">Run:     uv run settings_editor.py [PATH]</span>
 <span class="sd">         (default file: nativehtmlkit-settings.json in your application-data folder:</span>
 <span class="sd">         %APPDATA% on Windows, $XDG_CONFIG_HOME or ~/.config on Linux)</span>
 <span class="sd">Guide:   docs/python/tutorials/settings-editor.md (step 2 of 2)</span>
@@ -12141,8 +12141,8 @@ and the final app <a href="https://github.com/nativehtmlkit/nativehtmlkit_ui/blo
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Run it with <code>python settings_editor.py</code> or with a file of your choice:
-<code>python settings_editor.py ./my-settings.json</code>.</p>
+<p>Run it with <code>uv run settings_editor.py</code> or with a file of your choice:
+<code>uv run settings_editor.py ./my-settings.json</code>.</p>
 <ul>
 <li>Without an argument the file is <code>nativehtmlkit-settings.json</code> in your application-data folder
   (<code>%APPDATA%</code> on Windows, <code>$XDG_CONFIG_HOME</code> or <code>~/.config</code> on Linux). The PowerShell version of

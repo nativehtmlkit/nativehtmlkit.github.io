@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> open_file with index.html and style.css; pure planning logic; live preview; folder dialog fallback; undo.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>bulk_rename/app.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>bulk_rename/app.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/project-scaffolding/">project scaffolding</a></p>
 <h2 id="source-bulk_renameapppy">Source: <code>bulk_rename/app.py</code><a class="headerlink" href="#source-bulk_renameapppy" title="Permanent link">&para;</a></h2>
@@ -11940,7 +11943,7 @@
 <span class="sd">  * the native folder picker with a capability check and an ``RpcError`` fallback</span>
 <span class="sd">  * a confirmation ``&lt;dialog&gt;``, per-file error handling, and undo</span>
 
-<span class="sd">Run:  python examples/bulk_rename/app.py [FOLDER]</span>
+<span class="sd">Run:  uv run bulk_rename/app.py [FOLDER]</span>
 <span class="sd">In regular-expression mode the replacement uses Python syntax: ``\\1`` or ``\\g&lt;1&gt;`` for groups.</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>

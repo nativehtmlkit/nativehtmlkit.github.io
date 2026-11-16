@@ -11870,7 +11870,7 @@
 <h1 id="process-and-lifecycle-model">Process and lifecycle model<a class="headerlink" href="#process-and-lifecycle-model" title="Permanent link">&para;</a></h1>
 <p>A NativeHTMLKit application is <strong>two cooperating processes</strong>: the native host, which owns the windows, and your script, which owns the logic. The SDK hides most of this, but knowing the model explains several rules you will meet in every tutorial.</p>
 <pre class="mermaid"><code>sequenceDiagram
-  participant L as Launcher run (python app.py / pwsh -File app.ps1)
+  participant L as Launcher run (uv run app.py / pwsh -File app.ps1)
   participant H as Native host
   participant B as Backend run (same script, second time)
   L-&gt;&gt;H: start host with a private manifest
@@ -11882,14 +11882,14 @@
   B--&gt;&gt;H: backend exits
   H--&gt;&gt;L: host exits; the launcher exits with the host's status</code></pre>
 <h2 id="your-script-runs-twice">Your script runs twice<a class="headerlink" href="#your-script-runs-twice" title="Permanent link">&para;</a></h2>
-<p>When you run <code>python app.py</code>, <code>Application.start()</code> notices that it was not started by a host. It writes a private temporary manifest, starts the bundled host and waits; it <strong>never returns</strong> in that first run — the process ends with the host's exit status. The host then runs the <em>same command again</em> as its supervised backend. In that second run <code>Application.start()</code> connects to the host and returns the <code>Application</code>.</p>
+<p>When you run <code>uv run app.py</code>, <code>Application.start()</code> notices that it was not started by a host. It writes a private temporary manifest, starts the bundled host and waits; it <strong>never returns</strong> in that first run — the process ends with the host's exit status. The host then runs the <em>same Python command again</em> (the project's interpreter with the same script and arguments) as its supervised backend. In that second run <code>Application.start()</code> connects to the host and returns the <code>Application</code>.</p>
 <p>PowerShell works the same way: <code>Start-NativeHTMLKitScript</code> in a script run with <code>pwsh -File app.ps1</code> (or <code>powershell.exe -File app.ps1</code> on Windows) starts the host, which re-runs the script with the same PowerShell edition and arguments; the call returns the connected application only in the backend run. Script arguments are forwarded to the backend run.</p>
 <p>Consequences:</p>
 <ul>
 <li><strong>Everything above <code>Application.start()</code> / <code>Start-NativeHTMLKitScript</code> runs twice.</strong> Keep imports, constants and function definitions there; put side effects (reading files, creating folders, network calls) below the call or inside <code>main()</code>.</li>
 <li>Python examples use <code>if __name__ == "__main__": main()</code> and keep work inside <code>main()</code>.</li>
-<li><code>Application.start()</code> must run from a script file or <code>python -m package.module</code>; it refuses an interactive interpreter, <code>python -c</code> and standard input, because it could not re-run them. Command-line arguments are passed to the backend run unchanged.</li>
-<li>A Python backend started with <code>python -m nativehtmlkit run module:main</code> (or by a host manifest) only connects; it is not relaunched.</li>
+<li><code>Application.start()</code> must run from a script file or a module (<code>uv run app.py</code>, <code>uv run -m package.module</code>); it refuses an interactive interpreter, <code>python -c</code> and standard input, because it could not re-run them. Command-line arguments are passed to the backend run unchanged.</li>
+<li>A Python backend started with <code>uv run -m nativehtmlkit run module:main</code> (or by a host manifest) only connects; it is not relaunched.</li>
 </ul>
 <h2 id="starting-up-ready">Starting up: <code>ready</code><a class="headerlink" href="#starting-up-ready" title="Permanent link">&para;</a></h2>
 <p>After connecting, the backend creates at least one window, loads its document and registers event handlers, then announces <strong>ready</strong>:</p>

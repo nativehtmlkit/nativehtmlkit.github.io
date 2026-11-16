@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> both entry styles; on_before_quit; on_shutdown; request_attention.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>focus_timer.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>focus_timer.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/lifecycle/">lifecycle</a></p>
 <h2 id="source-focus_timerpy">Source: <code>focus_timer.py</code><a class="headerlink" href="#source-focus_timerpy" title="Permanent link">&para;</a></h2>
@@ -11933,8 +11936,8 @@
 
 <span class="sd">What it teaches</span>
 <span class="sd">  * a ``setup(app)`` entry point that works with BOTH launch styles:</span>
-<span class="sd">      python examples/focus_timer.py                         (Application.start)</span>
-<span class="sd">      cd examples &amp;&amp; python -m nativehtmlkit run focus_timer:setup   (host-first runner)</span>
+<span class="sd">      uv run focus_timer.py                         (Application.start)</span>
+<span class="sd">      uv run -m nativehtmlkit run focus_timer:setup   (host-first runner)</span>
 <span class="sd">  * ``on_before_quit``: veto a quit while the timer runs and ask with an HTML &lt;dialog&gt;</span>
 <span class="sd">  * ``on_shutdown``: save statistics after the host shut down (no more RPC is possible then)</span>
 <span class="sd">  * ``Window.request_attention`` (where the platform supports it) and ``Window.set(title=...)``</span>
@@ -12091,7 +12094,7 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Application</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Entry point for ``python -m nativehtmlkit run focus_timer:setup``; the runner calls app.run()."""</span>
+<span class="w">    </span><span class="sd">"""Entry point for ``uv run -m nativehtmlkit run focus_timer:setup``; the runner calls app.run()."""</span>
     <span class="n">stats</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">rpc</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"desktop.paths"</span><span class="p">)[</span><span class="s2">"state"</span><span class="p">])</span> <span class="o">/</span> <span class="s2">"focus-timer.json"</span>
     <span class="n">build</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">stats</span><span class="p">)</span>
 

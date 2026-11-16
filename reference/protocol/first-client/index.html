@@ -11981,7 +11981,7 @@ headless mode, so no desktop is required; drop <code>--headless</code> to see th
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <h2 id="1-run-it">1. Run it<a class="headerlink" href="#1-run-it" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NATIVEHTMLKIT_HOST_BINARY</span><span class="o">=</span>/path/to/nativehtmlkit-host
-python3<span class="w"> </span>examples/wire-v1/notes_app.py<span class="w"> </span>--headless<span class="w"> </span>--self-test<span class="w"> </span>--transcript<span class="w"> </span>session.jsonl
+uv<span class="w"> </span>run<span class="w"> </span>examples/wire-v1/notes_app.py<span class="w"> </span>--headless<span class="w"> </span>--self-test<span class="w"> </span>--transcript<span class="w"> </span>session.jsonl
 </code></pre></div>
 <p>Expected output (Core 1.0.3, Linux):</p>
 <div class="highlight"><pre><span></span><code>PASS empty form is not submitted

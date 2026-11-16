@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> background thread; thread-safe updates; pause/resume; clipboard.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>process_dashboard/dashboard.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>process_dashboard/dashboard.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/background-work/">background work</a></p>
 <h2 id="source-process_dashboarddashboardpy">Source: <code>process_dashboard/dashboard.py</code><a class="headerlink" href="#source-process_dashboarddashboardpy" title="Permanent link">&para;</a></h2>
@@ -11940,7 +11943,7 @@
 <span class="sd">  * copying the table to the clipboard with ``set_clipboard_text`` (and a fallback without one)</span>
 <span class="sd">  * stopping the thread from ``app.on_shutdown``</span>
 
-<span class="sd">Run:    python examples/process_dashboard/dashboard.py [--refresh-seconds 3]</span>
+<span class="sd">Run:    uv run process_dashboard/dashboard.py [--refresh-seconds 3]</span>
 <span class="sd">Guide:  docs/tutorials/process-dashboard.md (step 3 of 3)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>

@@ -12000,12 +12000,13 @@ result is <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/blob/ma
 repository's test suite against the real native host.</p>
 <p><img alt="Screenshot: py-sdk-todo" src="../../../../_media/nativehtmlkit-python/docs/images/examples/py-sdk-todo.png" /></p>
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
-<p><strong>You need</strong> Python 3.10+ on Linux x64 (glibc 2.39+) or Windows x64, and about 30 minutes.</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nativehtmlkit<span class="w">      </span><span class="c1"># or: uv add nativehtmlkit</span>
-nativehtmlkit-python<span class="w"> </span>version<span class="w">             </span><span class="c1"># prints the SDK and bundled host versions</span>
+<p><strong>You need</strong> <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on Linux x64 (glibc 2.39+) or Windows x64, and about 30 minutes.</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>todo<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>todo
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+uv<span class="w"> </span>run<span class="w"> </span>nativehtmlkit-python<span class="w"> </span>version<span class="w">             </span><span class="c1"># prints the SDK and bundled host versions</span>
 </code></pre></div>
 <h2 id="step-1-a-window-with-html-and-css">Step 1: a window with HTML and CSS<a class="headerlink" href="#step-1-a-window-with-html-and-css" title="Permanent link">&para;</a></h2>
-<p>Create <code>todo.py</code>:</p>
+<p>Create <code>todo.py</code> in the project folder:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nativehtmlkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
 
 <span class="n">PAGE</span> <span class="o">=</span> <span class="s2">"""&lt;!doctype html&gt;</span>
@@ -12030,7 +12031,7 @@ nativehtmlkit-python<span class="w"> </span>version<span class="w">             
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-<p>Run it with <code>python todo.py</code>. A native window appears; the HTML and CSS are rendered by the Rust
+<p>Run it with <code>uv run todo.py</code>. A native window appears; the HTML and CSS are rendered by the Rust
 host. There is no browser and no JavaScript.</p>
 <p>What happened:</p>
 <ul>
@@ -12221,12 +12222,12 @@ when the desktop is in dark mode:</p>
 <span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background</span><span class="p">:</span><span class="nf">var</span><span class="p">(</span><span class="nv">--bg</span><span class="p">);</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="nf">var</span><span class="p">(</span><span class="nv">--text</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p>Run the finished app:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/todo.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>todo.py
 </code></pre></div>
 <h2 id="test-it-without-a-desktop">Test it without a desktop<a class="headerlink" href="#test-it-without-a-desktop" title="Permanent link">&para;</a></h2>
 <p>The host has a headless mode for automated tests. It runs the whole protocol without native
 windows (and without user input):</p>
-<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>examples/todo.py<span class="w">      </span><span class="c1"># PowerShell: $env:NATIVEHTMLKIT_TEST_MODE=1</span>
+<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>todo.py<span class="w">      </span><span class="c1"># PowerShell: $env:NATIVEHTMLKIT_TEST_MODE=1</span>
 </code></pre></div>
 <p>Combine it with <code>request_submit</code>, <code>set_value</code> and read-back methods to test behaviour in CI.</p>
 <h2 id="where-next">Where next<a class="headerlink" href="#where-next" title="Permanent link">&para;</a></h2>

@@ -11983,11 +11983,10 @@ repository's example harness against the real NativeHTMLKit host.</p>
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p>The PowerShell version of this tutorial is <a href="../../../powershell/tutorials/expense-tracker/">here</a>.</p>
 <h2 id="step-0-install-and-check">Step 0: install and check<a class="headerlink" href="#step-0-install-and-check" title="Permanent link">&para;</a></h2>
-<p>You need Python 3.10+ on Linux (KDE Plasma Wayland is the primary desktop) or Windows.</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-.<span class="w"> </span>.venv/bin/activate<span class="w">            </span><span class="c1"># Windows: .venv\Scripts\activate</span>
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nativehtmlkit_ui<span class="w">     </span><span class="c1"># also installs the nativehtmlkit SDK with its native host</span>
-python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import nativehtmlkit_ui; print(nativehtmlkit_ui.__version__)"</span><span class="w">    </span><span class="c1"># 0.1.1</span>
+<p>You need <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on Linux (KDE Plasma Wayland is the primary desktop) or Windows.</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>expenses<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>expenses
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui<span class="w">         </span><span class="c1"># also installs the nativehtmlkit SDK with its native host</span>
+uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import nativehtmlkit_ui; print(nativehtmlkit_ui.__version__)"</span><span class="w">    </span><span class="c1"># 0.1.1</span>
 </code></pre></div>
 <h2 id="step-1-a-window-with-bound-inputs">Step 1: a window with bound inputs<a class="headerlink" href="#step-1-a-window-with-bound-inputs" title="Permanent link">&para;</a></h2>
 <p>Create <code>expenses.py</code>:</p>
@@ -12015,7 +12014,7 @@ python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import
         <span class="n">main</span><span class="p">(</span><span class="n">application</span><span class="p">)</span>
         <span class="n">application</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </code></pre></div>
-<p>Run it with <code>python expenses.py</code> and type into both fields: the preview line follows every
+<p>Run it with <code>uv run expenses.py</code> and type into both fields: the preview line follows every
 keystroke.</p>
 <p>What happened:</p>
 <ul>

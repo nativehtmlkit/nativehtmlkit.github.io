@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> dirty tracking with a computed snapshot; writing state back into controls; nested when regions.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>settings.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>settings.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/reactive-state/">reactive state</a></p>
 <h2 id="source-pythonsettingspy">Source: <code>python/settings.py</code><a class="headerlink" href="#source-pythonsettingspy" title="Permanent link">&para;</a></h2>
@@ -11929,7 +11932,7 @@
 <span class="sd">saved snapshot, writing state back into inputs/selects/checkboxes (Revert, Defaults) and</span>
 <span class="sd">enabling buttons only when they would do something. Replace save() with your own persistence.</span>
 
-<span class="sd">Run:  python settings.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run settings.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 

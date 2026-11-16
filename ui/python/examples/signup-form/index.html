@@ -11918,7 +11918,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> validation as computed state; guarded submit; form/confirmation swap; reset by setting states.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>signup_form.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit_ui
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>signup_form.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/forms-and-inputs/">forms and inputs</a></p>
 <h2 id="source-pythonsignup_formpy">Source: <code>python/signup_form.py</code><a class="headerlink" href="#source-pythonsignup_formpy" title="Permanent link">&para;</a></h2>
@@ -11929,7 +11932,7 @@
 <span class="sd">fields the user has typed in, a submit button disabled until the form is valid, swapping the</span>
 <span class="sd">form and a confirmation with ui.when(), and resetting every control by setting its state.</span>
 
-<span class="sd">Run:  python signup_form.py      (pip install nativehtmlkit_ui)</span>
+<span class="sd">Run:  uv run signup_form.py      (uv add nativehtmlkit_ui)</span>
 <span class="sd">"""</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 

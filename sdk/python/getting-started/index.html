@@ -11987,16 +11987,17 @@ HTML and CSS; your logic is ordinary Python that reacts to events and changes th
 browser, no JavaScript and no web server. The host and your Python code run as two processes that
 talk over a private local connection.</p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
-<p>You need CPython 3.10 to 3.14 on <strong>Linux x64</strong> (glibc 2.39 or newer) or <strong>Windows x64</strong>, and a
-desktop session to see windows.</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nativehtmlkit<span class="w">         </span><span class="c1"># or: uv add nativehtmlkit</span>
-nativehtmlkit-python<span class="w"> </span>version<span class="w">                </span><span class="c1"># prints the SDK, protocol and bundled host versions</span>
+<p>You need <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on <strong>Linux x64</strong> (glibc 2.39 or newer) or <strong>Windows x64</strong>, and a desktop
+session to see windows. uv provides a CPython 3.10 to 3.14 for the project if you have none.</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>hello<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>hello<span class="w">         </span><span class="c1"># a project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+uv<span class="w"> </span>run<span class="w"> </span>nativehtmlkit-python<span class="w"> </span>version<span class="w">     </span><span class="c1"># prints the SDK, protocol and bundled host versions</span>
 </code></pre></div>
 <p>The platform wheels bundle the native host and check its SHA-256 on every start. The source
-distribution has no host; use a published wheel. <code>nativehtmlkit-python doctor</code> prints the host's
+distribution has no host; use a published wheel. <code>uv run nativehtmlkit-python doctor</code> prints the host's
 view of your desktop session (display server, paths, renderer) without opening a window.</p>
 <h2 id="your-first-window">Your first window<a class="headerlink" href="#your-first-window" title="Permanent link">&para;</a></h2>
-<p>Save this as <code>hello.py</code>. It is the repository's
+<p>Save this as <code>hello.py</code> in the project folder. It is the repository's
 <a href="https://github.com/nativehtmlkit/nativehtmlkit-python/blob/main/examples/hello.py">hello.py</a>
 example:</p>
 <p><img alt="Screenshot: py-sdk-hello" src="../../../_media/nativehtmlkit-python/docs/images/examples/py-sdk-hello.png" /></p>
@@ -12043,7 +12044,7 @@ example:</p>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <p>Run it:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>hello.py<span class="w">          </span><span class="c1"># or: uv run hello.py</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>hello.py
 </code></pre></div>
 <p>A window titled <strong>Hello</strong> opens. Type a name and press <strong>Greet</strong>. Close the window to end the
 program.</p>
@@ -12064,7 +12065,7 @@ program.</p>
 <p>Every element your Python code touches has an <code>id</code>. That is how you address the page.</p>
 <h2 id="other-ways-to-run">Other ways to run<a class="headerlink" href="#other-ways-to-run" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>python -m nativehtmlkit run hello:build</code> imports <code>hello.py</code> only in the backend and calls
+<li><code>uv run -m nativehtmlkit run hello:build</code> imports <code>hello.py</code> only in the backend and calls
   <code>build(app)</code>; the runner then calls <code>app.run()</code> for you. Use it when module-level code must run
   only once (see <a href="../guides/lifecycle/">lifecycle</a>).</li>
 <li><code>nativehtmlkit-new myapp --name "My App"</code> creates a project with <code>app.py</code>, <code>index.html</code> and
@@ -12089,14 +12090,14 @@ back:</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"hello works"</span><span class="p">)</span>
     <span class="n">threading</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">app</span><span class="o">.</span><span class="n">request_quit</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>check_hello:check<span class="w">     </span><span class="c1"># prints: hello works</span>
+<div class="highlight"><pre><span></span><code><span class="nv">NATIVEHTMLKIT_TEST_MODE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>check_hello:check<span class="w">     </span><span class="c1"># prints: hello works</span>
 </code></pre></div>
 <h2 id="when-something-does-not-work">When something does not work<a class="headerlink" href="#when-something-does-not-work" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>nativehtmlkit-python version</code> exits with status 1 when no usable host is found: install a
+<li><code>uv run nativehtmlkit-python version</code> exits with status 1 when no usable host is found: install a
   platform wheel for Linux x64 or Windows x64.</li>
 <li>Nothing happens on a click: check that the <code>id</code> in <code>element=</code> matches the HTML. Run with
-  <code>nativehtmlkit-python --diagnostics trace run hello:build</code> and look for <code>document.dispatch</code>
+  <code>uv run nativehtmlkit-python --diagnostics trace run hello:build</code> and look for <code>document.dispatch</code>
   records with <code>matched: 0</code>.</li>
 <li>More in <a href="../guides/diagnostics-and-troubleshooting/">diagnostics and troubleshooting</a>.</li>
 </ul>

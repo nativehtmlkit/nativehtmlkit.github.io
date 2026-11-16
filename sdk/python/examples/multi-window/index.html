@@ -11924,7 +11924,10 @@
 <p><em>Real capture on KDE Plasma 6.6 Wayland with the released packages.</em></p>
 <p><strong>What it teaches:</strong> several windows; window state; on_window_event; on_before_close.</p>
 <h2 id="run-it">Run it<a class="headerlink" href="#run-it" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>window_manager.py
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>init<span class="w"> </span>--app<span class="w"> </span>myapp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myapp<span class="w">    </span><span class="c1"># once: a uv project for your app</span>
+uv<span class="w"> </span>add<span class="w"> </span>nativehtmlkit
+<span class="c1"># save the example file(s) in the project folder, then:</span>
+uv<span class="w"> </span>run<span class="w"> </span>window_manager.py
 </code></pre></div>
 <p>Related guide: <a href="../../guides/windows/">windows</a></p>
 <h2 id="source-window_managerpy">Source: <code>window_manager.py</code><a class="headerlink" href="#source-window_managerpy" title="Permanent link">&para;</a></h2>
@@ -11938,7 +11941,7 @@
 <span class="sd">  * ``Window.on_before_close``: veto closing a note with unsaved changes</span>
 <span class="sd">  * "closing the main window quits the app" even while other windows are open</span>
 
-<span class="sd">Run:  python examples/window_manager.py</span>
+<span class="sd">Run:  uv run window_manager.py</span>
 <span class="sd">Platform note: Wayland compositors own window placement and focus, so position/focus requests</span>
 <span class="sd">are refused there (RpcError -32001); size, title, maximize and close work everywhere.</span>
 <span class="sd">"""</span>

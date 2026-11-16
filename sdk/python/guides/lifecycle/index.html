@@ -3821,10 +3821,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-m-nativehtmlkit-run" class="md-nav__link">
+  <a href="#uv-run-m-nativehtmlkit-run" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <code>python -m nativehtmlkit run</code>
+        <code>uv run -m nativehtmlkit run</code>
       </span>
     </span>
   </a>
@@ -11804,10 +11804,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#python-m-nativehtmlkit-run" class="md-nav__link">
+  <a href="#uv-run-m-nativehtmlkit-run" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <code>python -m nativehtmlkit run</code>
+        <code>uv run -m nativehtmlkit run</code>
       </span>
     </span>
   </a>
@@ -12044,11 +12044,11 @@
 <tbody>
 <tr>
 <td><code>Application.start()</code> in a script</td>
-<td>Normal applications: <code>python app.py</code>, <code>uv run app.py</code>, <code>python -m pkg.app</code></td>
+<td>Normal applications: <code>uv run app.py</code>, <code>uv run -m pkg.app</code></td>
 <td><code>with Application.start(...) as app: ...; app.run()</code></td>
 </tr>
 <tr>
-<td><code>python -m nativehtmlkit run module:func</code></td>
+<td><code>uv run -m nativehtmlkit run module:func</code></td>
 <td>Module-level code must run once; quick experiments</td>
 <td><code>def func(app): ...</code> (the runner calls <code>app.run()</code>)</td>
 </tr>
@@ -12061,8 +12061,8 @@
 </table>
 <h3 id="applicationstart-and-the-second-run"><code>Application.start()</code> and the second run<a class="headerlink" href="#applicationstart-and-the-second-run" title="Permanent link">&para;</a></h3>
 <p>The native host must own the windows and supervise the Python process. When you run
-<code>python app.py</code>, <code>Application.start()</code> starts the host, and the host runs <strong>the same command
-again</strong> as its backend. In that second run <code>start()</code> connects and returns the <code>Application</code>. The
+<code>uv run app.py</code>, <code>Application.start()</code> starts the host, and the host runs <strong>the same Python command
+again</strong> (the interpreter uv started, with the same script and arguments) as its backend. In that second run <code>start()</code> connects and returns the <code>Application</code>. The
 first process waits, relays output, and exits with the host's status.</p>
 <p>So code <em>before</em> <code>start()</code> runs twice, and code after it runs once (in the backend):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
@@ -12082,17 +12082,17 @@ first process waits, relays output, and exits with the host's status.</p>
 <p><code>start()</code> refuses to run from an interactive interpreter, <code>python -c</code> or standard input
 (<code>StartupError</code>), because the host could not run it again. Arguments (<code>sys.argv</code>) and the working
 directory are passed to the second run unchanged.</p>
-<h3 id="python-m-nativehtmlkit-run"><code>python -m nativehtmlkit run</code><a class="headerlink" href="#python-m-nativehtmlkit-run" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>notes:setup<span class="w"> </span>--name<span class="w"> </span><span class="s2">"Notes"</span>
+<h3 id="uv-run-m-nativehtmlkit-run"><code>uv run -m nativehtmlkit run</code><a class="headerlink" href="#uv-run-m-nativehtmlkit-run" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>nativehtmlkit<span class="w"> </span>run<span class="w"> </span>notes:setup<span class="w"> </span>--name<span class="w"> </span><span class="s2">"Notes"</span>
 </code></pre></div>
 <p>The launcher process never imports your module; only the backend does, once. <code>setup(app)</code> creates
 windows and registers callbacks, then returns; the runner calls <code>app.run()</code>. An <code>async def</code>
 entry point is awaited first. See the <a href="../../reference/cli-runner/#run">command reference</a>.</p>
 <p>A module can support both styles:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>                       <span class="c1"># python -m nativehtmlkit run focus_timer:setup</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>                       <span class="c1"># uv run -m nativehtmlkit run focus_timer:setup</span>
     <span class="n">build</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>                           <span class="c1"># python focus_timer.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>                           <span class="c1"># uv run focus_timer.py</span>
     <span class="k">with</span> <span class="n">Application</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Focus timer"</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
         <span class="n">setup</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
         <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>

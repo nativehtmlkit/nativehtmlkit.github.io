@@ -13070,7 +13070,7 @@ show those with text components, which escape them. See the
 <h2 id="mounting-and-the-ui-owner">Mounting and the UI owner<a class="headerlink" href="#mounting-and-the-ui-owner" title="Permanent link">&para;</a></h2>
 <h3 id="uimountapp-ui"><code>ui.mount(app) -&gt; UI</code><a class="headerlink" href="#uimountapp-ui" title="Permanent link">&para;</a></h3>
 <p><code>app</code> is a connected SDK <code>Application</code> (from <code>Application.start()</code> or the
-<code>python -m nativehtmlkit run module:main</code> entry point). <code>mount()</code>:</p>
+<code>uv run -m nativehtmlkit run module:main</code> entry point). <code>mount()</code>:</p>
 <ol>
 <li>Renders the document (<code>ui.html()</code>), and opens one window with
    <code>app.open_html(markup, title=, width=, height=)</code>.</li>

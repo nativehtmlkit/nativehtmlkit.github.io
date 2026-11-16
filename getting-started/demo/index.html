@@ -11812,12 +11812,13 @@ example was started with <strong>Run Python</strong> and clicked three times.</e
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">PowerShell</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nativehtmlkit-demo
+<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>nativehtmlkit-demo<span class="w">                    </span><span class="c1"># run it without installing</span>
+uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>nativehtmlkit-demo<span class="w">        </span><span class="c1"># or install the command, then:</span>
 nativehtmlkit-demo
 </code></pre></div>
-<p>Needs Python 3.10 or later. This installs the <a href="https://pypi.org/project/nativehtmlkit/"><code>nativehtmlkit</code></a>
-SDK and <a href="https://pypi.org/project/nativehtmlkit_ui/"><code>nativehtmlkit_ui</code></a> too.
-<code>python -m nativehtmlkit_demo</code> works as well.</p>
+<p>Needs <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> (it provides Python 3.10 or later if needed). The demo comes with the
+<a href="https://pypi.org/project/nativehtmlkit/"><code>nativehtmlkit</code></a> SDK and
+<a href="https://pypi.org/project/nativehtmlkit_ui/"><code>nativehtmlkit_ui</code></a>, which its Python examples use.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">NativeHTMLKit</span><span class="p">.</span><span class="n">Demo</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
@@ -11868,7 +11869,7 @@ is missing, the button for that language says what to install.</p>
 Examples that save data, such as the todo list, save it where their own documentation says. The log
 viewer gets a sample log file that keeps growing while it runs.</p>
 <h2 id="check-an-installation">Check an installation<a class="headerlink" href="#check-an-installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nativehtmlkit-demo<span class="w"> </span>--self-test
+<div class="highlight"><pre><span></span><code>uvx<span class="w"> </span>nativehtmlkit-demo<span class="w"> </span>--self-test
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">Start-NativeHTMLKitDemo</span> <span class="n">-SelfTest</span>
 </code></pre></div>
