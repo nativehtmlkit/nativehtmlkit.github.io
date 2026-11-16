@@ -62,3 +62,20 @@
 .md-typeset img[src$=".png"] { border-radius: 0.3rem; }
 /* small italic captions under screenshots */
 .md-typeset p > em:only-child { color: var(--md-default-fg-color--lighter); font-size: 0.85em; }
+/* Left sidebar hierarchy: indent each level under a thin guide line so the tree is visible. */
+.md-sidebar--primary .md-nav[data-md-level="2"] > .md-nav__list {
+  margin-left: 0.45rem; padding-left: 0.55rem; border-left: 1px solid rgba(127, 211, 199, 0.28);
+}
+.md-sidebar--primary .md-nav[data-md-level="3"] > .md-nav__list {
+  margin-left: 0.45rem; padding-left: 0.55rem; border-left: 1px solid rgba(157, 183, 255, 0.22);
+}
+.md-sidebar--primary .md-nav[data-md-level="3"] .md-nav__link { font-size: 0.95em; }
+/* level-1 entries are section titles (Python / PowerShell, Linux / Windows): colour and spacing */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item--nested > .md-nav__link,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item--nested > .md-nav__container > .md-nav__link {
+  color: var(--nhk-h2); font-weight: 600; margin-top: 0.7em;
+}
+/* the active page stands out in the tree */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
+  color: var(--md-typeset-a-color); font-weight: 600;
+}
