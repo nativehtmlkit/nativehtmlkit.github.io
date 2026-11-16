@@ -1,0 +1,12395 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Native desktop HTML&#x2f;CSS apps from Python, PowerShell and the CLI">
+      
+      
+      
+        <link rel="canonical" href="https://nativehtmlkit.github.io/reference/protocol/document-commands/">
+      
+      
+      
+        <link rel="prev" href="../wire-tables/">
+      
+      
+        <link rel="next" href="../compatibility/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>Document commands - NativeHTMLKit</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NativeHTMLKit" class="md-header__button md-logo" aria-label="NativeHTMLKit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NativeHTMLKit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Document commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/nativehtmlkit/nativehtmlkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+  Get started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cli/" class="md-tabs__link">
+          
+  
+  CLI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../python/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../powershell/" class="md-tabs__link">
+          
+  
+  PowerShell
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../concepts/" class="md-tabs__link">
+          
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NativeHTMLKit" class="md-nav__button md-logo" aria-label="NativeHTMLKit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    NativeHTMLKit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nativehtmlkit/nativehtmlkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Get started
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Get started
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/choose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose an entry point
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Platform requirements
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CLI
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CLI
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/linux/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Linux
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Linux
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/linux/commands/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Commands
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/commands/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  select: choose rows (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/commands/view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  view: show records read-only (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/commands/form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  form: collect values with an HTML form (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/commands/doctor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  doctor, help and version (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/input-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Input formats (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/output-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Output formats (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/exit-codes-and-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exit codes and scripting (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/environment-and-diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment and diagnostics (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/css-and-forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CSS and forms (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/linux/recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Recipes
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2_8" id="__nav_3_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Recipes
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/csv-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review and export CSV reports (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/delete-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Delete files with confirmation (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/deploy-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  A deployment form (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a Docker container (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/git-branch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Pick a Git branch (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/headless-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Test your scripts without a desktop (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/json-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose from JSON API output (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  View logs (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multi-select in pipelines and xargs (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose processes to signal (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/recipes/timezone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a time zone in a light theme (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: build a project picker (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Troubleshooting (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/tutorial-branch-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: a Git branch picker (Linux)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/linux/examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2_12" id="__nav_3_2_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Examples
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/pick-git-branch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Pick a Git branch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/delete-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Delete files with confirmation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose processes to stop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/pick-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a Docker container
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/pick-from-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose from JSON API output
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/csv-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review and export CSV reports
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/view-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  View logs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/search-selected/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Search only the files you tick
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/deploy-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  A deployment form
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/pick-timezone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a time zone in a light theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/project-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Project picker (tutorial)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/branch-picker-step1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Branch picker, step 1 (tutorial)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/linux/examples/branch-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  git-pick: switch and delete branches (tutorial)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/windows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Windows
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/windows/commands/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Commands
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/commands/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  select: choose rows (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/commands/view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  view: show records read-only (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/commands/form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  form: collect values with an HTML form (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/commands/doctor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  doctor, help and version (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/input-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Input formats (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/output-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Output formats (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/exit-codes-and-scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exit codes and scripting (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/environment-and-diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment and diagnostics (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/css-and-forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CSS and forms (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/windows/recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Recipes
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3_8" id="__nav_3_3_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Recipes
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/csv-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review and export CSV reports (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/delete-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Delete files with confirmation (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/deploy-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  A deployment form (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a Docker container (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/git-branch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Pick a Git branch (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/headless-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Test your scripts without a desktop (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/json-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose from JSON API output (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  View logs and events (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multi-select in pipelines (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose processes to stop (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Restart, stop or start Windows services (Windows only)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/recipes/timezone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a time zone in a light theme (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: build a project picker (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Troubleshooting (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/tutorial-branch-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: a Git branch picker (Windows)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/windows/examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3_12" id="__nav_3_3_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_3_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Examples
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/pick-git-branch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Pick a Git branch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/delete-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Delete files with confirmation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose processes to stop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/pick-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a Docker container
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/pick-from-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose from JSON API output
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/csv-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review and export CSV reports
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/view-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  View logs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/search-selected/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Search only the files you tick
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/deploy-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  A deployment form
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/pick-timezone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a time zone in a light theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/pick-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Restart, stop or start Windows services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/project-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Project picker (tutorial)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/branch-picker-step1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Branch picker, step 1 (tutorial)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/windows/examples/branch-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  git-pick: switch and delete branches (tutorial)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference (both systems)
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference (both systems)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Diagnostics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/doctor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `nativehtmlkit doctor`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/exit-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exit status, errors and streams
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `nativehtmlkit form`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/global-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global options
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/input-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Input formats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Limits
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/output-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Output formats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/page-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Page structure
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/select/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `nativehtmlkit select`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/reference/view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `nativehtmlkit view`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How it works
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Python
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Python
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/sdk/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SDK
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  SDK
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/sdk/tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_2_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/tutorials/todo-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: build a todo app
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/tutorials/bulk-rename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: build a bulk file-rename tool with a live preview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/tutorials/process-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: a live process dashboard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/sdk/guides/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to guides
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_2_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/events-and-callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events and callbacks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/updating-the-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updating the page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/forms-and-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Forms and validation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple windows and window state
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/file-dialogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Native file dialogs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/dialogs-and-popovers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  HTML dialogs and popovers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/clipboard-and-desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Clipboard and desktop services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/keyboard-and-focus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keyboard and focus
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/styling-and-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Styling and layout
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/live-bitmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Live bitmaps
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/background-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background work
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/diagnostics-and-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Diagnostics and troubleshooting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/packaging-and-distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Packaging and distribution
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/project-scaffolding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Project scaffolding
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/guides/asyncio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  asyncio integration
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/sdk/examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_2_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Examples
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hello
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Counter
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Todo list
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/signup-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sign-up form
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/data-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory data table
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/process-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Process viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/log-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Log viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/file-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/multi-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple windows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/settings-dialog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings dialog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/clipboard-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Clipboard tool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/checksums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Checksums
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/live-chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Live chart
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/keyboard-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Snippet editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  About and support
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/dom-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM explorer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/focus-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Focus timer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/background-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background jobs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/bulk-rename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Bulk rename
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/process-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Process dashboard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/examples/async-counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Async counter
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/sdk/reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_2_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  API reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `Application`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/asyncio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  asyncio: `AsyncApplication`, `AsyncRpcClient`, `EventDispatcher`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/cli-runner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Command-line tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Diagnostics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `Document`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/environment-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Environment variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Errors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event objects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/live-bitmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `LiveBitmap`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `Node`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/rpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `RpcClient`: the host connection
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/reference/window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  `Window`
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/sdk/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How it works
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/ui/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI library
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  UI library
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/ui/tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/tutorials/expense-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial (Python): build an expense tracker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/tutorials/settings-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial (Python): build a settings editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/ui/guides/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to guides
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3_5" id="__nav_4_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_3_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/reactive-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reactive state and computed values
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Layouts and the responsive grid
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/forms-and-inputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Forms, inputs and validation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/lists-and-conditional-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lists and conditional content
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/theming-and-custom-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theming and custom CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/background-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background work
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/multiple-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple windows and multiple UIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/mixing-ui-and-sdk-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mixing the UI with direct SDK calls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/trusted-and-untrusted-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trusted and untrusted content
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/guides/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Testing your UI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../python/ui/examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Examples
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hello UI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Counter gallery
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/expenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Expense tracker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Task list
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/signup-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sign-up form
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings panel
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/settings-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/log-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Live log viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background calculation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/word-counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Word counter
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/clipboard-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Clipboard text tool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/file-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File inspector
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/multi-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes with inspector windows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System dashboard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/theme-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme preview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/examples/message-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message composer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API reference
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CSS and theming
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/ui/limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Limitations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  PowerShell
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  PowerShell
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/sdk/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SDK
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  SDK
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/sdk/tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_2_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/tutorials/todo-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: build a todo app
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/tutorials/bulk-rename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: build a bulk file-rename tool with a live preview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/tutorials/process-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: a live process dashboard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/sdk/guides/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to guides
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_2_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to structure an app script: start, ready, wait, quit, close
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/events-and-callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to handle events: callbacks, delegation, scope and closures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/updating-the-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to update the document: text, HTML, classes, batches and commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/forms-and-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to build forms with validation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to use several windows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/file-dialogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to open, save and choose folders with native dialogs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/dialogs-and-popovers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to use HTML dialogs and popovers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/clipboard-and-desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to use the clipboard and desktop services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/keyboard-and-focus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to handle the keyboard and focus
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/styling-and-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to style and lay out the page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/live-bitmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to draw live images: charts and previews with RGBA bitmaps
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/background-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to run slow work in the background
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/diagnostics-and-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to troubleshoot: diagnostics levels, counters and support bundles
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/packaging-and-distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to package and distribute an app
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/project-scaffolding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How to start a new app project
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security: untrusted text, HTML, files and secrets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/guides/windows-powershell-51/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Windows PowerShell 5.1 and PowerShell 7: writing scripts that run on both
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/sdk/examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_2_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Examples
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hello
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Counter
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Todo list
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/signup-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sign-up form
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/data-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory data table
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/process-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Process viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/log-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Log viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/file-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/multi-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple windows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/settings-dialog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings dialog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/clipboard-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Clipboard tool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/checksums/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Checksums
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/live-chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Live chart
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/keyboard-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Snippet editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  About and support
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/dom-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM explorer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/focus-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Focus timer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/background-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background jobs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/bulk-rename/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Bulk rename
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/examples/process-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Process dashboard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/sdk/reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_6" id="__nav_5_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_2_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  API reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: short aliases
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/bitmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: live bitmaps
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: desktop services
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: diagnostics and support
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: documents and DOM updates
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: document events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: forms, select lists, HTML dialogs and popovers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: application lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: nodes (elements without ids)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/objects-and-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: objects, errors, threading and limits
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/rpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: raw host requests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: background tasks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: project scaffolding and agent skills
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/reference/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference: windows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/sdk/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How it works
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/ui/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI library
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  UI library
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/ui/tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3_4" id="__nav_5_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_3_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/tutorials/expense-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial (PowerShell): build an expense tracker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/tutorials/settings-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial (PowerShell): build a settings editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/ui/guides/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to guides
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3_5" id="__nav_5_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_3_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/reactive-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reactive state and computed values
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Layouts and the responsive grid
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/forms-and-inputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Forms, inputs and validation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/lists-and-conditional-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lists and conditional content
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/theming-and-custom-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theming and custom CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/background-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background work
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/multiple-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Multiple windows and multiple UIs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/mixing-ui-and-sdk-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mixing the UI with direct SDK calls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/trusted-and-untrusted-content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trusted and untrusted content
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/guides/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Testing your UI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../powershell/ui/examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3_6" id="__nav_5_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_3_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Examples
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hello UI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Counter gallery
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/expenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Expense tracker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Task list
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/signup-form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sign-up form
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings panel
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/settings-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/log-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Live log viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Background calculation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/word-counter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Word counter
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/clipboard-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Clipboard text tool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/file-picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File inspector
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/multi-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Notes with inspector windows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System dashboard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/theme-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme preview
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/examples/message-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message composer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  API reference
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CSS and theming
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../powershell/ui/limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Limitations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Concepts
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Concepts
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Architecture
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Process and lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/threading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Threading and callbacks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/documents-and-handles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Documents and stale handles
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Security model
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/accessibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Accessibility
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/why-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Why native?
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../capabilities/matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Capability matrix
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../capabilities/limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Limitations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core/html-css-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  HTML and CSS support
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core/html-css-profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CSS profile (generated)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events the host delivers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Wire protocol (for client authors)
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_7" id="__nav_7_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_7_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Wire protocol (for client authors)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an SDK
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorial: a first client
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wire-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Methods and messages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Document commands
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Document commands
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-elements-and-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Addressing elements and nodes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dom-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DOM content
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes-and-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Attributes and classes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-and-node-handles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Query and node handles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form-controls-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Form controls and validation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-selection-and-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Focus, selection and editing
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dialogs-and-popovers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dialogs and popovers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrolling-and-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Scrolling and geometry
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#styles-environment-and-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Styles, environment and behaviour
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resources and diagnostics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Compatibility
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Glossary
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  FAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../demos/screenshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Screenshots
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-elements-and-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Addressing elements and nodes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dom-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DOM content
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes-and-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Attributes and classes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-and-node-handles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Query and node handles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form-controls-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Form controls and validation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-selection-and-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Focus, selection and editing
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dialogs-and-popovers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dialogs and popovers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrolling-and-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Scrolling and geometry
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#styles-environment-and-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Styles, environment and behaviour
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resources and diagnostics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Wire protocol (for client authors)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+  
+
+
+<!-- GENERATED by scripts/import-docs.py from nativehtmlkit-core/protocol/reference/document-commands.md; edit it there. -->
+<h1 id="documentcommand-op-reference-wire-v1"><code>document.command</code> op reference (wire v1)<a class="headerlink" href="#documentcommand-op-reference-wire-v1" title="Permanent link">&para;</a></h1>
+<p>A <code>document.command</code> request runs one op on one document:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"c7"</span><span class="p">,</span><span class="nt">"method"</span><span class="p">:</span><span class="s2">"document.command"</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">"params"</span><span class="p">:{</span><span class="nt">"window_id"</span><span class="p">:</span><span class="s2">"w1"</span><span class="p">,</span><span class="nt">"document_id"</span><span class="p">:</span><span class="s2">"d1"</span><span class="p">,</span><span class="nt">"command"</span><span class="p">:{</span><span class="nt">"op"</span><span class="p">:</span><span class="s2">"set_text"</span><span class="p">,</span><span class="nt">"element"</span><span class="p">:</span><span class="s2">"status"</span><span class="p">,</span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"Saved"</span><span class="p">}}}</span>
+</code></pre></div>
+<p>This page explains what each of the 81 ops does and what it returns. Exact field types, defaults
+and observed result members are generated in the <a href="../wire-tables/">wire tables</a>; the JSON Schema
+<a href="https://github.com/nativehtmlkit/nativehtmlkit-core/blob/main/protocol/v1/schemas/document-command.schema.json"><code>../v1/schemas/document-command.schema.json</code></a> is
+authoritative. Result examples below were captured from a headless Core 1.0.3 host.</p>
+<h2 id="addressing-elements-and-nodes">Addressing elements and nodes<a class="headerlink" href="#addressing-elements-and-nodes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><code>element</code></strong> is the value of an element's <code>id</code> attribute. Ids must be unique and contain no
+  whitespace (≤256 bytes); a document violating that does not load. An unknown id is <code>-32602</code>
+  (<code>Unknown element ID: …</code>).</li>
+<li><strong><code>node</code></strong> is an opaque, generation-checked reference such as <code>"node:1:13:1"</code>, returned by
+  <code>query_nodes</code>, <code>node_of</code>, <code>get_node</code>, <code>node_children</code>, <code>element_at_point</code>, <code>get_focused_element</code>
+  and by every <code>document.event</code> (<code>event.node</code>). It lets you address elements without an <code>id</code>. A node
+  that was removed is never reused: using it fails with <code>-32004</code> (or a <code>stale_reference</code> answer from
+  <code>explain</code>). Do not parse node references.</li>
+<li>Ops that accept <code>element</code> <strong>or</strong> <code>node</code> take exactly one of them.</li>
+<li>Mutating ops answer <code>{"updated": true}</code> unless stated otherwise.</li>
+<li>Ops may emit <code>document.event</code> notifications <em>before</em> their response (for example <code>focus</code> emits
+  <code>focus</code>/<code>focusin</code>, <code>request_submit</code> emits <code>submit</code> or <code>invalid</code>). Programmatic value changes
+  (<code>set_value</code>, <code>set_checked</code>, <code>set_selected_values</code>) do <strong>not</strong> emit <code>input</code>/<code>change</code>.</li>
+<li>Text arguments are limited to 16 KiB per update (<code>set_text</code>, <code>set_value</code>, <code>append_text</code>);
+  inserted HTML and whole documents to 1 MiB; a document to 65,536 nodes and nesting depth 256.</li>
+<li>A result larger than one 2 MiB frame fails with <code>-32002</code>; page with <code>offset</code>/<code>limit</code>.</li>
+</ul>
+<h2 id="dom-content">DOM content<a class="headerlink" href="#dom-content" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set_text {element, text}</code></td>
+<td>Replace the element's children with one text node. Text is never parsed as markup. Not for form controls (use <code>set_value</code>).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>append_text {element, text}</code></td>
+<td>Append text (extends the last text node while small, so streaming logs stay cheap).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_text {element}</code></td>
+<td>Text content.</td>
+<td><code>{text}</code></td>
+</tr>
+<tr>
+<td><code>get_html {element? \| node?, outer?, offset?, limit?}</code></td>
+<td>Serialized inner (or outer) HTML of an element, or of the whole document when neither is given; paged by byte <code>offset</code>/<code>limit</code>.</td>
+<td><code>{html, offset, next_offset, total_bytes, truncated}</code></td>
+</tr>
+<tr>
+<td><code>insert_html {element, position, html}</code></td>
+<td>Parse trusted HTML and insert it at <code>beforebegin</code>, <code>afterbegin</code>, <code>beforeend</code> or <code>afterend</code>. The fragment is validated like a document (no scripts, unique ids). <strong>Escape untrusted text.</strong></td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>replace_children_html {element, html}</code></td>
+<td>Replace the children with parsed HTML.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>remove_element {element}</code></td>
+<td>Remove an element (not <code>html</code>, <code>head</code>, <code>body</code>).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>move_element {element, target, position}</code></td>
+<td>Move an element relative to <code>target</code> (same positions).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>trim_children {element, keep, from?}</code></td>
+<td>Keep only <code>keep</code> children; <code>from: "start"</code> (default) removes the oldest children first, <code>"end"</code> the newest. Typical for bounded logs.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>batch {ops}</code></td>
+<td>Apply up to 1024 <code>BatchOp</code>s (<code>set_text</code>, <code>set_attribute</code>, <code>remove_attribute</code>, <code>add_class</code>, <code>remove_class</code>, <code>insert_html</code>, <code>replace_children_html</code>, <code>remove_element</code>, <code>move_element</code>, <code>append_text</code>, <code>trim_children</code>) as one update.</td>
+<td><code>updated</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attributes-and-classes">Attributes and classes<a class="headerlink" href="#attributes-and-classes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_attribute {element, name}</code></td>
+<td>One attribute.</td>
+<td><code>{value}</code></td>
+</tr>
+<tr>
+<td><code>get_attributes {element}</code></td>
+<td>All attributes.</td>
+<td><code>{attributes: {name: value}}</code></td>
+</tr>
+<tr>
+<td><code>set_attribute {element, name, value}</code> / <code>remove_attribute {element, name}</code></td>
+<td>Change an attribute; <code>on*</code> and <code>srcdoc</code> are rejected. Setting <code>open</code> on <code>&lt;details&gt;</code> emits <code>toggle</code>.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>add_class</code> / <code>remove_class {element, name}</code></td>
+<td>Edit <code>class</code>.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>has_element {element}</code></td>
+<td>Whether an id exists.</td>
+<td><code>{exists}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-and-node-handles">Query and node handles<a class="headerlink" href="#query-and-node-handles" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query {selector, offset?, limit?}</code></td>
+<td>CSS selector query returning only matches <strong>that have an id</strong>.</td>
+<td><code>{ids, total, matched_nodes, offset, limit, truncated}</code></td>
+</tr>
+<tr>
+<td><code>query_nodes {selector, offset?, limit?}</code></td>
+<td>Selector query returning node references for every match (limit default 1024).</td>
+<td><code>{nodes: [{node, element}], total, offset}</code></td>
+</tr>
+<tr>
+<td><code>node_of {element?}</code></td>
+<td>Node reference of an id (or of the document).</td>
+<td><code>{node}</code></td>
+</tr>
+<tr>
+<td><code>get_node {node}</code></td>
+<td>Describe a node: <code>type</code> (<code>element</code>, <code>text</code>, …), <code>name</code>, <code>id</code>, <code>attributes</code>, <code>text</code>, <code>parent</code>, <code>previous</code>, <code>next</code>, <code>child_count</code>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>node_children {node, offset?, limit?}</code></td>
+<td>Child references (limit default 256, max 4096).</td>
+<td><code>{children, total}</code></td>
+</tr>
+<tr>
+<td><code>node_batch {ops}</code></td>
+<td>Like <code>batch</code>, but every op addresses a <code>node</code> (<code>MoveElement</code> uses <code>target_node</code>). Stale nodes fail the batch.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>element_at_point {x, y}</code></td>
+<td>Hit test in viewport CSS px (<code>null</code> outside the viewport).</td>
+<td><code>{node, element}</code> or <code>null</code></td>
+</tr>
+<tr>
+<td><code>text_at_point {x, y}</code></td>
+<td>Text position under a point.</td>
+<td><code>{hit: {block, element, offset}}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="form-controls-and-validation">Form controls and validation<a class="headerlink" href="#form-controls-and-validation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_value</code> / <code>set_value {element, value?}</code></td>
+<td>Value of <code>input</code>, <code>textarea</code>, <code>select</code>.</td>
+<td><code>{value}</code> / <code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_checked</code> / <code>set_checked {element, checked?}</code></td>
+<td>Checkbox/radio state.</td>
+<td><code>{checked}</code> / <code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_options {element}</code></td>
+<td>Options of a <code>select</code>.</td>
+<td><code>{options: [{value, label, selected, disabled}]}</code></td>
+</tr>
+<tr>
+<td><code>set_selected_values {element, values}</code></td>
+<td>Select options by value (several for <code>multiple</code>).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_files {element}</code></td>
+<td>Files chosen in an <code>&lt;input type=file&gt;</code> (paths only, never contents).</td>
+<td><code>{files}</code></td>
+</tr>
+<tr>
+<td><code>get_form_data {element \| node, submitter?, submitter_node?}</code></td>
+<td>Form entries in document order, as a submission would build them.</td>
+<td><code>{entries: [{name, kind, value}], submitter}</code> (file entries carry <code>path</code>/<code>filename</code>)</td>
+</tr>
+<tr>
+<td><code>request_submit {element \| node, submitter?, submitter_node?}</code></td>
+<td>Run constraint validation; if valid fire a cancelable <code>submit</code> event, otherwise <code>invalid</code> events and focus the first invalid control. Never navigates.</td>
+<td><code>{submitted, default_prevented}</code></td>
+</tr>
+<tr>
+<td><code>reset_form {element \| node}</code></td>
+<td>Fire <code>reset</code> and restore defaults.</td>
+<td><code>{reset, default_prevented}</code></td>
+</tr>
+<tr>
+<td><code>check_validity {element}</code></td>
+<td>Validate a control or a whole form; fires <code>invalid</code> on failures.</td>
+<td><code>{valid, count, invalid: [ids]}</code></td>
+</tr>
+<tr>
+<td><code>get_validity {element}</code></td>
+<td>Validity state with the standard flags (<code>valueMissing</code>, <code>typeMismatch</code>, <code>patternMismatch</code>, <code>tooLong</code>, <code>tooShort</code>, <code>rangeUnderflow</code>, <code>rangeOverflow</code>, <code>stepMismatch</code>, <code>badInput</code>, <code>customError</code>) and an English <code>message</code>.</td>
+<td><code>{valid, will_validate, flags, message}</code></td>
+</tr>
+<tr>
+<td><code>set_custom_validity {element \| node, message}</code></td>
+<td>Set (non-empty) or clear (<code>""</code>) a custom error.</td>
+<td>validity state</td>
+</tr>
+</tbody>
+</table>
+<h2 id="focus-selection-and-editing">Focus, selection and editing<a class="headerlink" href="#focus-selection-and-editing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>focus {element \| node}</code> / <code>blur {element? \| node?}</code></td>
+<td>Move focus (emits <code>focus</code>/<code>focusin</code>, and <code>blur</code>/<code>focusout</code> on the old element). <code>blur</code> without a target blurs the focused element.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_focused_element</code></td>
+<td>Focused element.</td>
+<td><code>{element, node}</code> or <code>null</code></td>
+</tr>
+<tr>
+<td><code>get_control_selection {element \| node}</code></td>
+<td>Caret/selection inside a text control (UTF-16 offsets).</td>
+<td><code>{start, end, direction, length, node}</code></td>
+</tr>
+<tr>
+<td><code>set_control_selection {…, start, end, direction?}</code></td>
+<td>Select in a control (<code>forward</code>, <code>backward</code>, <code>none</code>); emits <code>select</code>/<code>selectionchange</code>.</td>
+<td>selection</td>
+</tr>
+<tr>
+<td><code>replace_control_range {…, replacement, start?, end?, selection_mode?}</code></td>
+<td>Replace a range (default: the selection) as user editing would (emits <code>beforeinput</code>, <code>input</code>); <code>selection_mode</code> <code>preserve</code> (default), <code>select</code>, <code>start</code>, <code>end</code>.</td>
+<td>selection + <code>changed</code></td>
+</tr>
+<tr>
+<td><code>edit_command {command, element? \| node?}</code></td>
+<td><code>undo</code>, <code>redo</code>, <code>cut</code>, <code>copy</code>, <code>paste</code>, <code>select_all</code>, <code>delete</code> on a text control (<code>copy</code>/<code>cut</code>/<code>paste</code> also on the document selection).</td>
+<td><code>{accepted, clipboard_pending}</code></td>
+</tr>
+<tr>
+<td><code>select_text {element?}</code></td>
+<td>Select an element's text (or the whole document).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_selection</code> / <code>copy_selection</code> / <code>clear_selection</code></td>
+<td>Document text selection (not control selections); <code>copy_selection</code> returns the text it copies.</td>
+<td><code>{text}</code> / <code>{text}</code> / <code>updated</code></td>
+</tr>
+<tr>
+<td><code>set_pointer_capture {element, pointer_id?, capture?}</code> / <code>get_pointer_capture</code></td>
+<td>Capture the active pointer for drag interactions; only accepted while that pointer is pressed.</td>
+<td><code>{accepted}</code> / <code>{element}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dialogs-and-popovers">Dialogs and popovers<a class="headerlink" href="#dialogs-and-popovers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>show_dialog {element, modal?}</code></td>
+<td>Open a <code>&lt;dialog&gt;</code> (modal by default: top layer, rest inert). Emits <code>beforetoggle</code>, focus events, <code>toggle</code>.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>close_dialog {element, return_value?}</code></td>
+<td>Close it; emits <code>close</code> with <code>return_value</code>.</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_dialog {element}</code></td>
+<td><code>{open, modal, return_value}</code>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>show_popover</code> / <code>hide_popover</code> / <code>toggle_popover {element}</code></td>
+<td>Popover state of an element with <code>popover</code>. Emits <code>beforetoggle</code>/<code>toggle</code>.</td>
+<td><code>updated</code> / <code>{open}</code></td>
+</tr>
+<tr>
+<td><code>get_popover {element}</code></td>
+<td><code>{open, kind}</code> (<code>auto</code> or <code>manual</code>).</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scrolling-and-geometry">Scrolling and geometry<a class="headerlink" href="#scrolling-and-geometry" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scroll_to {element?, x?, y?, behavior?}</code></td>
+<td>Scroll a container (or the viewport) to a position; <code>behavior</code> <code>auto</code>, <code>instant</code> or <code>smooth</code>. Emits <code>scroll</code>.</td>
+<td>scroll state</td>
+</tr>
+<tr>
+<td><code>scroll_by {element?, dx?, dy?, behavior?}</code></td>
+<td>Relative scroll.</td>
+<td>scroll state</td>
+</tr>
+<tr>
+<td><code>scroll_into_view {element, block?, inline?, behavior?}</code></td>
+<td>Align <code>start</code>, <code>center</code>, <code>end</code> or <code>nearest</code> (default).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_scroll {element?}</code></td>
+<td><code>{x, y, min_x, min_y, max_x, max_y, width, height, scrollable, animating}</code>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>set_scroll_follow {element?, follow?}</code></td>
+<td>Keep a container pinned to its end while content is appended (log views).</td>
+<td><code>updated</code></td>
+</tr>
+<tr>
+<td><code>get_rect {element}</code></td>
+<td>Border box in viewport CSS px.</td>
+<td><code>{rect: {x, y, width, height}}</code></td>
+</tr>
+<tr>
+<td><code>text_rects {element? \| node?, start?, end?}</code></td>
+<td>Line boxes of an element's text.</td>
+<td><code>{text, length, rects: [{x, y, width, height, visible}]}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="styles-environment-and-behaviour">Styles, environment and behaviour<a class="headerlink" href="#styles-environment-and-behaviour" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add_stylesheet {css}</code></td>
+<td>Add a runtime stylesheet (≤1 MiB, ≤64 sheets).</td>
+<td><code>{sheet, diagnostics}</code> (parse problems such as unknown properties, with line/column)</td>
+</tr>
+<tr>
+<td><code>replace_stylesheet {sheet, css}</code> / <code>remove_stylesheet {sheet}</code></td>
+<td>Change a runtime sheet.</td>
+<td><code>{sheet, diagnostics}</code> / <code>updated</code></td>
+</tr>
+<tr>
+<td><code>list_stylesheets</code></td>
+<td>Document <code>&lt;style&gt;</code>/<code>&lt;link&gt;</code> and runtime sheets.</td>
+<td><code>{sheets: [{sheet, kind, node, element, href, media, length}]}</code></td>
+</tr>
+<tr>
+<td><code>get_computed_style {element \| node, properties}</code></td>
+<td>1..64 property names (custom properties allowed): <code>{status: "supported", value, inherited}</code>, <code>{status: "unsupported", feature}</code> (profile-excluded) or <code>{status: "invalid", reason}</code>.</td>
+<td><code>{schema: 1, properties}</code></td>
+</tr>
+<tr>
+<td><code>set_environment {color_scheme?, reduced_motion?}</code></td>
+<td>App override for <code>prefers-color-scheme</code> (<code>light</code>, <code>dark</code>, <code>system</code>) and <code>prefers-reduced-motion</code> (<code>reduce</code>, <code>no-preference</code>, <code>system</code>).</td>
+<td>environment</td>
+</tr>
+<tr>
+<td><code>get_environment</code></td>
+<td><code>{color_scheme, reduced_motion, high_contrast, scale, …_source, system_…}</code>; sources are <code>app</code>, <code>system</code> or <code>default</code>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>set_default_action {element, event, key?, shift?, ctrl?, alt?, meta?, prevent?}</code></td>
+<td>Declare ahead of time that the host prevents an event's default action on that element (and descendants), optionally only for one key and modifier combination. Events: <code>keydown</code>, <code>click</code>, <code>dblclick</code>, <code>auxclick</code>, <code>contextmenu</code>, <code>beforeinput</code>, <code>copy</code>, <code>cut</code>, <code>paste</code>, <code>mousedown</code>, <code>pointerdown</code>, <code>wheel</code>, <code>submit</code>, <code>reset</code>, <code>cancel</code>, <code>beforetoggle</code>. <code>prevent: false</code> removes the rule. ≤256 rules. The delivered event then has <code>default_prevented: true</code>.</td>
+<td><code>updated</code></td>
+</tr>
+</tbody>
+</table>
+<p>There is no way to prevent a default action <em>from an event handler</em>: events reach the backend after
+the host handled the input. Declare rules with <code>set_default_action</code> instead.</p>
+<h2 id="resources-and-diagnostics">Resources and diagnostics<a class="headerlink" href="#resources-and-diagnostics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>What it does</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>register_resource_bundle {name, entries: [{path, data_url}]}</code></td>
+<td>In-memory files served as <code>nativehtmlkit-res://&lt;name&gt;/&lt;path&gt;</code> (≤256 entries and 1 MiB decoded per request; at most 64 bundles and 16 MiB of registered data in total). Re-registering replaces the bundle.</td>
+<td><code>{name, replaced}</code></td>
+</tr>
+<tr>
+<td><code>unregister_resource_bundle {name}</code></td>
+<td>Remove a bundle.</td>
+<td><code>{name, removed}</code></td>
+</tr>
+<tr>
+<td><code>get_resource_stats</code> / <code>purge_unused_resources {url?}</code></td>
+<td>Cache, bundle and SVG raster counters / drop unreferenced cache entries.</td>
+<td>stats / <code>{purged, stats}</code></td>
+</tr>
+<tr>
+<td><code>get_accessibility_tree</code></td>
+<td>The semantic tree the native bridge publishes: nodes with <code>id</code>, <code>role</code>, <code>name</code>, <code>html_id</code>, <code>bounds</code>, <code>states</code>, <code>relations</code>, <code>structure</code>, <code>actions</code>, <code>children</code>, and the tree <code>focus</code>.</td>
+<td><code>{tree}</code></td>
+</tr>
+<tr>
+<td><code>get_diagnostics</code></td>
+<td>Bounded engine diagnostics (<code>code</code>, <code>stage</code>, <code>feature</code>, <code>reason</code>, <code>message</code>), e.g. <code>UNSUPPORTED_FEATURE</code> for dropped CSS or <code>RESOURCE_DENIED</code> for refused URLs.</td>
+<td><code>{css_profile_version, diagnostics}</code></td>
+</tr>
+<tr>
+<td><code>css_profile</code></td>
+<td>The CSS feature profile: <code>{version, features: [{id, state}]}</code>; see the <a href="../../core/html-css-profile/">generated profile</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td><code>explain {element \| node, property?}</code></td>
+<td>Why a property has (no) effect: <code>status</code> <code>applied</code>, <code>not_applicable</code> (e.g. <code>display: none</code> ancestor, inline box, static position, not a flex/grid item), <code>overridden</code>, <code>unsupported</code> (profile), <code>unknown_property</code> or <code>stale_reference</code>, with a human <code>reason</code>. Without <code>property</code>, explains the element and its inline-style declarations.</td>
+<td><code>{schema: 1, status, reason, …}</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><small>Source: <a href="https://github.com/nativehtmlkit/nativehtmlkit-core/blob/main/protocol/reference/document-commands.md">nativehtmlkit-core/protocol/reference/document-commands.md</a> · edit the page there.</small></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.instant","navigation.tabs","navigation.sections","navigation.top","navigation.indexes","navigation.path","content.tabs.link","search.suggest","content.code.copy"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>
