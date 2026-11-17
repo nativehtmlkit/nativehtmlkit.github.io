@@ -393,6 +393,8 @@
       
         
       
+        
+      
     
     
     
@@ -11121,6 +11123,8 @@
       
         
       
+        
+      
     
     
     
@@ -11536,6 +11540,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../reference/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples and verification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../reference/glossary/" class="md-nav__link">
         
   
@@ -11758,7 +11789,7 @@
 <h1 id="ui-limitations-and-qualification">UI limitations and qualification<a class="headerlink" href="#ui-limitations-and-qualification" title="Permanent link">&para;</a></h1>
 <p>UI 0.1.1 is an early (pre-1.0) release. Its 0.1.1 packages passed the real-input GUI suite (state, input, keyboard focus, select, disabled bindings, responsive widths, two windows, 1000-update load, 100 mount/close cycles) at 100% scaling against Python SDK 0.1.2 / PowerShell SDK 0.1.2 / Core 1.0.3 on KDE Plasma 6.6 Wayland (Python, PowerShell 7) and Windows Server 2022 (Python, PowerShell 7, Windows PowerShell 5.1). IME, 125%/150% scaling and theme checks were last run with UI 0.1.0 on SDK 0.1.0 / Core 1.0.2. Screen-reader validation is incomplete and Core's select/Orca announcement issue remains open.</p>
 <p><strong>Known UI bugs recorded in the Project register:</strong> Python <code>Computed</code> can falsely raise a circular dependency error and retain a stale value during concurrent updates; disposing many UI windows can accumulate SDK shutdown callbacks. Until fixed, serialize writes affecting the same computed state, use background worker handoff via <code>ui.post</code>, and avoid rapidly creating/discarding many UIs in long-lived applications.</p>
-<p><strong>Inputs placed directly in a column are 200px tall (0.1.1 stylesheet defect B-0014).</strong> The built-in rule <code>.nhk-field { flex: 1 1 200px }</code> is meant for fields in a row, but in a column (<code>ui.column()</code>, <code>ui.stack()</code>, <code>Add-NHKUiColumn</code>) the 200px basis applies to the field's height, so a single input followed by more content leaves a large empty gap. Inputs inside a row or directly inside a card (a plain block) are not affected. Workaround: pass</p>
+<p><strong>Inputs placed directly in a column are 200px tall (0.1.1 stylesheet defect).</strong> The built-in rule <code>.nhk-field { flex: 1 1 200px }</code> is meant for fields in a row, but in a column (<code>ui.column()</code>, <code>ui.stack()</code>, <code>Add-NHKUiColumn</code>) the 200px basis applies to the field's height, so a single input followed by more content leaves a large empty gap. Inputs inside a row or directly inside a card (a plain block) are not affected. Workaround: pass</p>
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">nhk-col</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="nc">nhk-field</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p>as <code>extra_css=</code> (Python; add <code>.nhk-stack &gt; .nhk-field</code> for <code>ui.stack()</code>) or <code>-ExtraCss</code> (PowerShell). The <code>signup_form</code> and <code>multi_window</code> examples do this. Guides: <a href="../guides/layouts/">Python layouts</a>, <a href="../../powershell/guides/layouts/">PowerShell layouts</a>.</p>

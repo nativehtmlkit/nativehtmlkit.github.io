@@ -393,6 +393,8 @@
       
         
       
+        
+      
     
     
     
@@ -1377,10 +1379,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limits-known-defect-b-0003" class="md-nav__link">
+  <a href="#limits-known-defect" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Limits (known defect B-0003)
+        Limits (known defect)
       </span>
     </span>
   </a>
@@ -11226,6 +11228,8 @@
       
         
       
+        
+      
     
     
     
@@ -11641,6 +11645,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../reference/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples and verification
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../reference/glossary/" class="md-nav__link">
         
   
@@ -11797,10 +11828,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limits-known-defect-b-0003" class="md-nav__link">
+  <a href="#limits-known-defect" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Limits (known defect B-0003)
+        Limits (known defect)
       </span>
     </span>
   </a>
@@ -12024,9 +12055,9 @@ Each UI has its own owner thread; updates of different windows are independent.<
 <li>Closing the <strong>last</strong> window ends the application (Core asks for quit with reason
   <code>last_window</code>).</li>
 </ul>
-<h2 id="limits-known-defect-b-0003">Limits (known defect B-0003)<a class="headerlink" href="#limits-known-defect-b-0003" title="Permanent link">&para;</a></h2>
-<p>Every <code>mount()</code> registers an application shutdown callback that cannot be removed (open defect
-<strong>B-0003</strong>). Cap the number of windows a long-running app creates, or reuse them; the example
+<h2 id="limits-known-defect">Limits (known defect)<a class="headerlink" href="#limits-known-defect" title="Permanent link">&para;</a></h2>
+<p>Every <code>mount()</code> registers an application shutdown callback that cannot be removed (open defect).
+Cap the number of windows a long-running app creates, or reuse them; the example
 allows three inspectors at a time.</p>
 <h2 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permanent link">&para;</a></h2>
 <p>Dispose every UI you created in <code>finally</code> (<code>ui.dispose()</code> is idempotent). Window and

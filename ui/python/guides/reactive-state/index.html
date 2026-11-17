@@ -393,6 +393,8 @@
       
         
       
+        
+      
     
     
     
@@ -11237,6 +11239,8 @@
       
         
       
+        
+      
     
     
     
@@ -11640,6 +11644,33 @@
           </nav>
         
       
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples and verification
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -12071,7 +12102,7 @@ and the <a href="../../tutorials/settings-editor/">settings-editor tutorial</a>)
 <h2 id="where-states-may-be-changed">Where states may be changed<a class="headerlink" href="#where-states-may-be-changed" title="Permanent link">&para;</a></h2>
 <p>States may be set from any thread; the window update always happens on the UI owner thread.
 However, a <code>Computed</code> whose dependencies are set from several threads at once is affected by the
-open defect <strong>B-0002</strong> (a false "circular dependency" error and a stale value). Make all writes
+open computed-concurrency defect (a false "circular dependency" error and a stale value). Make all writes
 that feed one computed on the UI owner: <code>ui.post(state.set, value)</code>. See
 <a href="../background-work/">background work</a>.</p>
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>

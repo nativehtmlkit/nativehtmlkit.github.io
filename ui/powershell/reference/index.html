@@ -393,6 +393,8 @@
       
         
       
+        
+      
     
     
     
@@ -11485,6 +11487,8 @@
       
         
       
+        
+      
     
     
     
@@ -11888,6 +11892,33 @@
           </nav>
         
       
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples and verification
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -13082,12 +13113,12 @@ with <code>on</code>; attribute values and text are encoded; <code>$false</code>
   or context-menu hook in the UI module. Use SDK events on <code>$ui.Document</code> if you need them.</li>
 <li>There is no event queue: a long callback delays the next event (the SDK keeps pumping host
   requests while it waits).</li>
-<li><strong>B-0014, fields directly in a column are 200 px tall.</strong> The stylesheet rule
+<li><strong>Fields directly in a column are 200 px tall.</strong> The stylesheet rule
   <code>.nhk-field { flex: 1 1 200px }</code> is meant for rows; in <code>Add-NHKUiColumn</code> the 200 px basis
   becomes the field's height. Fields in rows and cards are not affected. Workaround:
   <code>-ExtraCss '.nhk-col &gt; .nhk-field { flex: 0 0 auto; }'</code> (see the
   <a href="../guides/layouts/">layouts guide</a>).</li>
-<li>The Python defects B-0002 and B-0003 do not apply: computed values are synchronous on the
+<li>The Python computed-concurrency and shutdown-callback defects do not apply: computed values are synchronous on the
   owner runspace and <code>Start-NHKUi</code> registers no application shutdown callback.</li>
 </ul>
 <p>See <a href="../limitations/">limitations</a> for qualification status.</p>

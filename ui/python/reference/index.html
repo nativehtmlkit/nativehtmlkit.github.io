@@ -393,6 +393,8 @@
       
         
       
+        
+      
     
     
     
@@ -11558,6 +11560,8 @@
       
         
       
+        
+      
     
     
     
@@ -11961,6 +11965,33 @@
           </nav>
         
       
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples and verification
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -13252,17 +13283,17 @@ dialog is unavailable) come from your own SDK calls and are not wrapped.</p>
 <h2 id="known-defects">Known defects<a class="headerlink" href="#known-defects" title="Permanent link">&para;</a></h2>
 <p>These are recorded, open defects of 0.1.1 (see <a href="../../powershell/limitations/">limitations</a>):</p>
 <ul>
-<li><strong>B-0002, <code>Computed</code> under concurrent updates.</strong> When dependencies of the same computed are
+<li><strong><code>Computed</code> under concurrent updates.</strong> When dependencies of the same computed are
   set from several threads at the same time, a recomputation can falsely raise
   <code>RuntimeError("Circular computed-state dependency")</code> and keep a stale value. Serialize
   writes that affect the same computed: make them on the UI owner (<code>ui.post(state.set, value)</code>)
   or from a single worker thread.</li>
-<li><strong>B-0003, shutdown callback retention.</strong> Each <code>mount()</code> registers an
+<li><strong>Shutdown callback retention.</strong> Each <code>mount()</code> registers an
   <code>Application.on_shutdown</code> callback, and the SDK offers no way to remove it. The callback holds
   the UI only weakly, but the registrations accumulate. Avoid creating and discarding many UIs
   in a long-running application; reuse windows or cap their number (as
   <code>examples/python/multi_window.py</code> does).</li>
-<li><strong>B-0014, fields directly in a column are 200 px tall.</strong> The stylesheet rule
+<li><strong>Fields directly in a column are 200 px tall.</strong> The stylesheet rule
   <code>.nhk-field { flex: 1 1 200px }</code> is meant for rows; in <code>ui.column()</code> or <code>ui.stack()</code> the
   200 px basis becomes the field's height. Fields in rows and cards are not affected.
   Workaround: <code>extra_css=".nhk-col &gt; .nhk-field, .nhk-stack &gt; .nhk-field { flex: 0 0 auto; }"</code>
